@@ -1,0 +1,159 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "events",
+    "items": [
+        {
+            "eventType": "variable",
+            "name": "combatState",
+            "type": "string",
+            "initialValue": "playerTurn",
+            "comment": "Controla el estado del combate (playerTurn, enemyTurn, playerAttacking, enemyAttacking, playerReturning, enemyReturning, victory, defeat)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerHP",
+            "type": "number",
+            "initialValue": "100",
+            "comment": "Vida actual del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "enemyHP",
+            "type": "number",
+            "initialValue": "100",
+            "comment": "Vida actual del enemigo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerAttack",
+            "type": "number",
+            "initialValue": "25",
+            "comment": "Daño de ataque del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "enemyAttack",
+            "type": "number",
+            "initialValue": "20",
+            "comment": "Daño de ataque del enemigo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "isAttacking",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Controla si está en proceso de ataque",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "attackCooldown",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Tiempo entre ataques (120 frames = 2 segundos)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "targetX",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Posición X objetivo para el movimiento",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "targetY",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Posición Y objetivo para el movimiento",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "originalPlayerX",
+            "type": "number",
+            "initialValue": "100",
+            "comment": "Posición X inicial del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "originalPlayerY",
+            "type": "number",
+            "initialValue": "300",
+            "comment": "Posición Y inicial del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "originalEnemyX",
+            "type": "number",
+            "initialValue": "700",
+            "comment": "Posición X inicial del enemigo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "originalEnemyY",
+            "type": "number",
+            "initialValue": "300",
+            "comment": "Posición Y inicial del enemigo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "attackDistance",
+            "type": "number",
+            "initialValue": "50",
+            "comment": "Distancia mínima para realizar un ataque",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "returnDistance",
+            "type": "number",
+            "initialValue": "10",
+            "comment": "Distancia para considerar que ha regresado a su posición",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "movementSpeed",
+            "type": "number",
+            "initialValue": "0.1",
+            "comment": "Velocidad de movimiento (factor de interpolación)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "cooldownDuration",
+            "type": "number",
+            "initialValue": "120",
+            "comment": "Duración del cooldown entre ataques en frames",
+            "isStatic": false,
+            "isConstant": false
+        }
+    ]
+}
