@@ -486,7 +486,7 @@
                             "id": "set-animation",
                             "objectClass": "PlayerCombat",
                             "parameters": {
-                                "animation": "\"Backward\"",
+                                "animation": "\"Idle\"",
                                 "from": "beginning"
                             }
                         }
@@ -649,7 +649,7 @@
                             "id": "set-animation",
                             "objectClass": "EnemyCombat",
                             "parameters": {
-                                "animation": "\"Backward\"",
+                                "animation": "\"Idle\"",
                                 "from": "beginning"
                             }
                         }
@@ -1649,6 +1649,150 @@
                             "script": [
                                 "console.log('⏰ PAUSA TERMINADA - Turno del jugador iniciado')"
                             ]
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== SISTEMA DE REGRESO DESPUÉS DE VICTORIA ==="
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"victory\""
+                            }
+                        },
+                        {
+                            "id": "compare-two-values",
+                            "objectClass": "System",
+                            "parameters": {
+                                "first-value": "distance(PlayerCombat.X, PlayerCombat.Y, originalPlayerX, originalPlayerY)",
+                                "comparison": 1,
+                                "second-value": "10"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-position",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "x": "PlayerCombat.X + (originalPlayerX - PlayerCombat.X) * moveSpeed",
+                                "y": "PlayerCombat.Y + (originalPlayerY - PlayerCombat.Y) * moveSpeed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"victory\""
+                            }
+                        },
+                        {
+                            "id": "compare-two-values",
+                            "objectClass": "System",
+                            "parameters": {
+                                "first-value": "distance(PlayerCombat.X, PlayerCombat.Y, originalPlayerX, originalPlayerY)",
+                                "comparison": 2,
+                                "second-value": "10"
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"defeat\""
+                            }
+                        },
+                        {
+                            "id": "compare-two-values",
+                            "objectClass": "System",
+                            "parameters": {
+                                "first-value": "distance(EnemyCombat.X, EnemyCombat.Y, originalEnemyX, originalEnemyY)",
+                                "comparison": 1,
+                                "second-value": "10"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-position",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "x": "EnemyCombat.X + (originalEnemyX - EnemyCombat.X) * moveSpeed",
+                                "y": "EnemyCombat.Y + (originalEnemyY - EnemyCombat.Y) * moveSpeed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"defeat\""
+                            }
+                        },
+                        {
+                            "id": "compare-two-values",
+                            "objectClass": "System",
+                            "parameters": {
+                                "first-value": "distance(EnemyCombat.X, EnemyCombat.Y, originalEnemyX, originalEnemyY)",
+                                "comparison": 2,
+                                "second-value": "10"
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
                         }
                     ]
                 },
