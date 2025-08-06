@@ -1,0 +1,22 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "Damage",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": []
+        }
+    ],
+    "folders": []
+}

@@ -1,0 +1,3287 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "layouts",
+    "families": [
+        {
+            "name": "Family1",
+            "plugin-id": "Sprite",
+            "instanceVariables": [
+                {
+                    "name": "Strength",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Vitality",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Agility",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Speed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Defense",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "MaxHealth",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "HealthRegen",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "PhysicalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "AttackSpeed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "DodgeChance",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "MovementSpeed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "CriticalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "CriticalChance",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "DamageReduction",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "FinalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "FinalDamageTaken",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                }
+            ],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "members": [
+                "EnemyCombat",
+                "PlayerCombat"
+            ]
+        }
+    ],
+    "object-types": [
+        {
+            "name": "UICombatBG",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 320,
+                                "height": 180,
+                                "originX": 0,
+                                "originY": 0,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 0,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 0
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "UICombatBG",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "PlayerCombat",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [
+                {
+                    "effectId": "hsladjust",
+                    "name": "AdjustHSL"
+                }
+            ],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 1,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 2,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 3,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Idle",
+                        "isLooping": true,
+                        "isPingPong": true,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 6
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 4,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.19791666666666666,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.8125,
+                                        0.19791666666666666,
+                                        0.8125
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Travel",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 4
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 5,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.19791666666666666,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.8125,
+                                        0.19791666666666666,
+                                        0.8125
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Attack",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 4
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "PlayerCombat",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "EnemyCombat",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [
+                {
+                    "name": "enemyID",
+                    "type": "number",
+                    "desc": "Enemy identification number",
+                    "show": true
+                },
+                {
+                    "name": "hitpoints",
+                    "type": "number",
+                    "desc": "Enemy hitpoints",
+                    "show": true
+                },
+                {
+                    "name": "attack",
+                    "type": "number",
+                    "desc": "How much damage the enemy deals",
+                    "show": true
+                },
+                {
+                    "name": "posX",
+                    "type": "number",
+                    "desc": "Enemy X position in the arena",
+                    "show": true
+                },
+                {
+                    "name": "posY",
+                    "type": "number",
+                    "desc": "Enemy Y position in the arena",
+                    "show": true
+                }
+            ],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [
+                {
+                    "effectId": "hsladjust",
+                    "name": "AdjustHSL"
+                }
+            ],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.4583333333333333,
+                                "originY": 0.5208333333333334,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 6,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 7,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 8,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Rat",
+                        "isLooping": true,
+                        "isPingPong": true,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 6
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 9,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "RatAtk",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 0
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 10,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.2916666666666667,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.8333333333333334,
+                                        0.2916666666666667,
+                                        0.8333333333333334
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 11,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.2916666666666667,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.8333333333333334,
+                                        0.2916666666666667,
+                                        0.8333333333333334
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 12,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.2916666666666667,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.16666666666666666,
+                                        0.7083333333333334,
+                                        0.8333333333333334,
+                                        0.2916666666666667,
+                                        0.8333333333333334
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Jellyfish",
+                        "isLooping": true,
+                        "isPingPong": true,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 6
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 13,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "JellyfishAtk",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 0
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 14,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 15,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 16,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Snake",
+                        "isLooping": true,
+                        "isPingPong": true,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 6
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 17,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "SnakeAtk",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 0
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "EnemyCombat",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "EnemyHealth",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "EnemyHealth",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "PlayerHealth",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "PlayerHealth",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "Damage",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "Damage",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "DebugStatsPlayer",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "DebugStatsPlayer",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "DebugStatsEnemy",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "DebugStatsEnemy",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "Debug",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "ui-state": [
+                [
+                    "Debug",
+                    {}
+                ]
+            ]
+        },
+        {
+            "name": "PlayerHealthBarBG",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 250,
+                                "height": 250,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 18,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "PlayerHealthBarBG",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "EnemyHealthBarBG",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 250,
+                                "height": 250,
+                                "originX": 1,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 19,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "EnemyHealthBarBG",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "PlayerHealthBar",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [
+                {
+                    "effectId": "tint",
+                    "name": "Tint"
+                }
+            ],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 250,
+                                "height": 250,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 20,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "PlayerHealthBar",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "EnemyHealthBar",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [
+                {
+                    "effectId": "tint",
+                    "name": "Tint"
+                }
+            ],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 250,
+                                "height": 250,
+                                "originX": 1,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 21,
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            },
+            "ui-state": [
+                [
+                    "EnemyHealthBar",
+                    {
+                        "animations": "{\"expanded\":true,\"subfolders\":[]}"
+                    }
+                ]
+            ]
+        }
+    ],
+    "items": [
+        {
+            "name": "Combat",
+            "layers": [
+                {
+                    "name": "World",
+                    "overriden": 0,
+                    "subLayers": [],
+                    "instances": [
+                        {
+                            "type": "UICombatBG",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Animation 1",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 436336200429835,
+                                "expanded": true,
+                                "indexInFolder": 0,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": true,
+                            "world": {
+                                "x": 0,
+                                "y": 0,
+                                "width": 1920,
+                                "height": 1080,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "PlayerCombat",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Idle",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {
+                                "Strength": 25,
+                                "Vitality": 5,
+                                "Agility": 5,
+                                "Speed": 5,
+                                "Defense": 5,
+                                "MaxHealth": 0,
+                                "HealthRegen": 0,
+                                "PhysicalDamage": 0,
+                                "AttackSpeed": 0,
+                                "DodgeChance": 0,
+                                "MovementSpeed": 0,
+                                "CriticalDamage": 0,
+                                "CriticalChance": 0,
+                                "DamageReduction": 0,
+                                "FinalDamage": 0,
+                                "FinalDamageTaken": 0
+                            },
+                            "behaviors": {
+                                "Tween": {
+                                    "properties": {
+                                        "enabled": true
+                                    }
+                                }
+                            },
+                            "effects": {
+                                "AdjustHSL": {
+                                    "isEnabled": true,
+                                    "parameters": {
+                                        "hue": 0,
+                                        "saturation": 1,
+                                        "luminosity": 1
+                                    }
+                                }
+                            },
+                            "instanceFolderItem": {
+                                "sid": 715601016714940,
+                                "expanded": true,
+                                "indexInFolder": 1,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 320,
+                                "y": 600,
+                                "width": 300,
+                                "height": 300,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "EnemyCombat",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Rat",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {
+                                "Strength": 5,
+                                "Vitality": 5,
+                                "Agility": 5,
+                                "Speed": 5,
+                                "Defense": 5,
+                                "MaxHealth": 0,
+                                "HealthRegen": 0,
+                                "PhysicalDamage": 0,
+                                "AttackSpeed": 0,
+                                "DodgeChance": 0,
+                                "MovementSpeed": 0,
+                                "CriticalDamage": 0,
+                                "CriticalChance": 0,
+                                "DamageReduction": 0,
+                                "FinalDamage": 0,
+                                "FinalDamageTaken": 0,
+                                "enemyID": 0,
+                                "hitpoints": 0,
+                                "attack": 0,
+                                "posX": 0,
+                                "posY": 0
+                            },
+                            "behaviors": {
+                                "Tween": {
+                                    "properties": {
+                                        "enabled": true
+                                    }
+                                }
+                            },
+                            "effects": {
+                                "AdjustHSL": {
+                                    "isEnabled": true,
+                                    "parameters": {
+                                        "hue": 0,
+                                        "saturation": 1,
+                                        "luminosity": 1
+                                    }
+                                }
+                            },
+                            "instanceFolderItem": {
+                                "sid": 127883268651999,
+                                "expanded": true,
+                                "indexInFolder": 2,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1480,
+                                "y": 600,
+                                "width": 300,
+                                "height": 300,
+                                "originX": 0.4583333333333333,
+                                "originY": 0.5208333333333334,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        }
+                    ],
+                    "effectTypes": [],
+                    "isInitiallyVisible": true,
+                    "isInitiallyInteractive": true,
+                    "isHTMLElementsLayer": false,
+                    "color": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    "backgroundColor": [
+                        0.3686274509803922,
+                        0.3686274509803922,
+                        0.3686274509803922,
+                        1
+                    ],
+                    "isTransparent": false,
+                    "parallaxX": 1,
+                    "parallaxY": 1,
+                    "scaleRate": 1,
+                    "forceOwnTexture": false,
+                    "renderingMode": "3d",
+                    "drawOrder": "z-order",
+                    "useRenderCells": false,
+                    "blendMode": "normal",
+                    "zElevation": 0,
+                    "global": false
+                },
+                {
+                    "name": "UI",
+                    "overriden": 0,
+                    "subLayers": [],
+                    "instances": [
+                        {
+                            "type": "EnemyHealth",
+                            "properties": {
+                                "text": "HP: 100",
+                                "enable-bbcode": true,
+                                "font": "Arial",
+                                "size": 20,
+                                "line-height": 0,
+                                "bold": false,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "horizontal-alignment": "center",
+                                "vertical-alignment": "top",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": true,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 922981950840903,
+                                "expanded": true,
+                                "indexInFolder": 3,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1360,
+                                "y": 680,
+                                "width": 200,
+                                "height": 30,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "PlayerHealth",
+                            "properties": {
+                                "text": "HP: 100",
+                                "enable-bbcode": true,
+                                "font": "Arial",
+                                "size": 20,
+                                "line-height": 0,
+                                "bold": false,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "horizontal-alignment": "left",
+                                "vertical-alignment": "top",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": true,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 964068276880799,
+                                "expanded": true,
+                                "indexInFolder": 4,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 280,
+                                "y": 680,
+                                "width": 200,
+                                "height": 30,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "Damage",
+                            "properties": {
+                                "text": "10",
+                                "enable-bbcode": true,
+                                "font": "monospace",
+                                "size": 40,
+                                "line-height": 0,
+                                "bold": true,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "horizontal-alignment": "center",
+                                "vertical-alignment": "center",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": false,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {
+                                "Tween": {
+                                    "properties": {
+                                        "enabled": true
+                                    }
+                                }
+                            },
+                            "instanceFolderItem": {
+                                "sid": 497547444121873,
+                                "expanded": true,
+                                "indexInFolder": 5,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1400,
+                                "y": 400,
+                                "width": 120,
+                                "height": 80,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "DebugStatsPlayer",
+                            "properties": {
+                                "text": "\"[color=#ffff00]MaxHealth: [/color]\" & PlayerCombat.MaxHealth & \"  |  [color=#ffff00]Vitality: [/color]\" & PlayerCombat.Vitality & \"  |  [color=#ffff00]Strength: [/color]\" & PlayerCombat.Strength &  \"  |  [color=#ffff00]Agility: [/color]\" & PlayerCombat.Agility &  \"  |  [color=#ffff00]Speed: [/color]\" & PlayerCombat.Speed & \"  |  [color=#ffff00]Defense: [/color]\" & PlayerCombat.Defense & \"  |  [color=#ffff00]HealthRegen: [/color]\" & PlayerCombat.HealthRegen \"  |  [color=#ffff00]PhysicalDamage: [/color]\" & PlayerCombat.PhysicalDamage & \"  |  [color=#ffff00]AttackSpeed: [/color]\" & PlayerCombat.AttackSpeed & \"  |  [color=#ffff00]DodgeChance: [/color]\" & PlayerCombat.DodgeChance & \"  |  [color=#ffff00]CriticalChance: [/color]\" & PlayerCombat.CriticalChance & \"  |  [color=#ffff00]CriticalDamage: [/color]\" & PlayerCombat.CriticalDamage & \"  |  [color=#ffff00]DamageReduction: [/color]\" & PlayerCombat.DamageReduction & \"  |  [color=#ffff00]FinalDamage: [/color]\" & PlayerCombat.FinalDamage & \"  |  [color=#ffff00]FinalDamageTaken: [/color]\" & PlayerCombat.FinalDamageTaken & \"  |  [color=#ffff00]MovementSpeed: [/color]\" & PlayerCombat.MovementSpeed",
+                                "enable-bbcode": true,
+                                "font": "Arial",
+                                "size": 20,
+                                "line-height": 0,
+                                "bold": false,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "horizontal-alignment": "left",
+                                "vertical-alignment": "top",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": true,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 475991418426471,
+                                "expanded": true,
+                                "indexInFolder": 6,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 0,
+                                "y": 1200,
+                                "width": 880,
+                                "height": 280,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "DebugStatsEnemy",
+                            "properties": {
+                                "text": "\"[color=#ffff00]MaxHealth: [/color]\" & PlayerCombat.MaxHealth & \"  |  [color=#ffff00]Vitality: [/color]\" & PlayerCombat.Vitality & \"  |  [color=#ffff00]Strength: [/color]\" & PlayerCombat.Strength &  \"  |  [color=#ffff00]Agility: [/color]\" & PlayerCombat.Agility &  \"  |  [color=#ffff00]Speed: [/color]\" & PlayerCombat.Speed & \"  |  [color=#ffff00]Defense: [/color]\" & PlayerCombat.Defense & \"  |  [color=#ffff00]HealthRegen: [/color]\" & PlayerCombat.HealthRegen \"  |  [color=#ffff00]PhysicalDamage: [/color]\" & PlayerCombat.PhysicalDamage & \"  |  [color=#ffff00]AttackSpeed: [/color]\" & PlayerCombat.AttackSpeed & \"  |  [color=#ffff00]DodgeChance: [/color]\" & PlayerCombat.DodgeChance & \"  |  [color=#ffff00]CriticalChance: [/color]\" & PlayerCombat.CriticalChance & \"  |  [color=#ffff00]CriticalDamage: [/color]\" & PlayerCombat.CriticalDamage & \"  |  [color=#ffff00]DamageReduction: [/color]\" & PlayerCombat.DamageReduction & \"  |  [color=#ffff00]FinalDamage: [/color]\" & PlayerCombat.FinalDamage & \"  |  [color=#ffff00]FinalDamageTaken: [/color]\" & PlayerCombat.FinalDamageTaken & \"  |  [color=#ffff00]MovementSpeed: [/color]\" & PlayerCombat.MovementSpeed",
+                                "enable-bbcode": true,
+                                "font": "Arial",
+                                "size": 20,
+                                "line-height": 0,
+                                "bold": false,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "horizontal-alignment": "right",
+                                "vertical-alignment": "top",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": true,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 133369108326193,
+                                "expanded": true,
+                                "indexInFolder": 7,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1000,
+                                "y": 1200,
+                                "width": 880,
+                                "height": 280,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "Debug",
+                            "properties": {
+                                "text": "",
+                                "enable-bbcode": true,
+                                "font": "Arial",
+                                "size": 20,
+                                "line-height": 0,
+                                "bold": false,
+                                "italic": false,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "horizontal-alignment": "left",
+                                "vertical-alignment": "top",
+                                "wrapping": "word",
+                                "text-direction": "ltr",
+                                "icon-set": -1,
+                                "initially-visible": true,
+                                "origin": "top-left",
+                                "read-aloud": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 110765789082743,
+                                "expanded": true,
+                                "indexInFolder": 8,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 880,
+                                "y": 560,
+                                "width": 200,
+                                "height": 30,
+                                "originX": 0,
+                                "originY": 0,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "PlayerHealthBarBG",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Animation 1",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 355333860771274,
+                                "expanded": true,
+                                "indexInFolder": 11,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 80,
+                                "y": 90,
+                                "width": 600,
+                                "height": 40,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "EnemyHealthBarBG",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Animation 1",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {},
+                            "instanceFolderItem": {
+                                "sid": 427644506616299,
+                                "expanded": true,
+                                "indexInFolder": 12,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1840,
+                                "y": 80,
+                                "width": 600,
+                                "height": 40,
+                                "originX": 1,
+                                "originY": 0.5,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "PlayerHealthBar",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Animation 1",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {
+                                "Tween": {
+                                    "properties": {
+                                        "enabled": true
+                                    }
+                                }
+                            },
+                            "effects": {
+                                "Tint": {
+                                    "isEnabled": true,
+                                    "parameters": {
+                                        "color": [
+                                            1,
+                                            1,
+                                            1,
+                                            1
+                                        ]
+                                    }
+                                }
+                            },
+                            "instanceFolderItem": {
+                                "sid": 629114130510547,
+                                "expanded": true,
+                                "indexInFolder": 10,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 80,
+                                "y": 90,
+                                "width": 600,
+                                "height": 40,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        },
+                        {
+                            "type": "EnemyHealthBar",
+                            "properties": {
+                                "initially-visible": true,
+                                "initial-animation": "Animation 1",
+                                "initial-frame": 0,
+                                "enable-collisions": true,
+                                "live-preview": false
+                            },
+                            "tags": "",
+                            "instanceVariables": {},
+                            "behaviors": {
+                                "Tween": {
+                                    "properties": {
+                                        "enabled": true
+                                    }
+                                }
+                            },
+                            "effects": {
+                                "Tint": {
+                                    "isEnabled": true,
+                                    "parameters": {
+                                        "color": [
+                                            1,
+                                            1,
+                                            1,
+                                            1
+                                        ]
+                                    }
+                                }
+                            },
+                            "instanceFolderItem": {
+                                "sid": 801797751950666,
+                                "expanded": true,
+                                "indexInFolder": 9,
+                                "folderNestingLevel": 0
+                            },
+                            "showing": true,
+                            "locked": false,
+                            "world": {
+                                "x": 1840,
+                                "y": 80,
+                                "width": 600,
+                                "height": 40,
+                                "originX": 1,
+                                "originY": 0.5,
+                                "color": [
+                                    1,
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "angle": 0,
+                                "zElevation": 0
+                            }
+                        }
+                    ],
+                    "effectTypes": [],
+                    "isInitiallyVisible": true,
+                    "isInitiallyInteractive": true,
+                    "isHTMLElementsLayer": false,
+                    "color": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    "backgroundColor": [
+                        0.3686274509803922,
+                        0.3686274509803922,
+                        0.3686274509803922,
+                        1
+                    ],
+                    "isTransparent": true,
+                    "parallaxX": 1,
+                    "parallaxY": 1,
+                    "scaleRate": 1,
+                    "forceOwnTexture": false,
+                    "renderingMode": "3d",
+                    "drawOrder": "z-order",
+                    "useRenderCells": false,
+                    "blendMode": "normal",
+                    "zElevation": 0,
+                    "global": false
+                }
+            ],
+            "scene-graphs-folder-root": {
+                "items": [
+                    {
+                        "sid": 436336200429835,
+                        "expanded": true,
+                        "indexInFolder": 0,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 715601016714940,
+                        "expanded": true,
+                        "indexInFolder": 1,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 127883268651999,
+                        "expanded": true,
+                        "indexInFolder": 2,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 922981950840903,
+                        "expanded": true,
+                        "indexInFolder": 3,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 964068276880799,
+                        "expanded": true,
+                        "indexInFolder": 4,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 497547444121873,
+                        "expanded": true,
+                        "indexInFolder": 5,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 475991418426471,
+                        "expanded": true,
+                        "indexInFolder": 6,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 133369108326193,
+                        "expanded": true,
+                        "indexInFolder": 7,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 110765789082743,
+                        "expanded": true,
+                        "indexInFolder": 8,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 801797751950666,
+                        "expanded": true,
+                        "indexInFolder": 9,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 629114130510547,
+                        "expanded": true,
+                        "indexInFolder": 10,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 355333860771274,
+                        "expanded": true,
+                        "indexInFolder": 11,
+                        "folderNestingLevel": 0
+                    },
+                    {
+                        "sid": 427644506616299,
+                        "expanded": true,
+                        "indexInFolder": 12,
+                        "folderNestingLevel": 0
+                    }
+                ],
+                "subfolders": []
+            },
+            "effectTypes": [],
+            "width": 1920,
+            "height": 1080,
+            "unboundedScrolling": false,
+            "vpX": 0.5,
+            "vpY": 0.5,
+            "projection": "perspective",
+            "eventSheet": "CombatEvents",
+            "ui-state": {
+                "propertiesBar": {
+                    "properties": [
+                        {
+                            "name": "Layout",
+                            "expanded": true,
+                            "children": [
+                                {
+                                    "name": "Size",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Vanishing point",
+                                    "expanded": false,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Effects",
+                            "expanded": true,
+                            "children": []
+                        },
+                        {
+                            "name": "Editor",
+                            "expanded": true,
+                            "children": [
+                                {
+                                    "name": "Margins",
+                                    "expanded": false,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Grid size",
+                                    "expanded": false,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Grid offset",
+                                    "expanded": false,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ],
+                    "scrollPosition": 0
+                },
+                "layersBar": {
+                    "name": "<root>",
+                    "children": [
+                        {
+                            "name": "UI",
+                            "expanded": true,
+                            "children": []
+                        },
+                        {
+                            "name": "World",
+                            "expanded": true,
+                            "children": []
+                        }
+                    ]
+                },
+                "grid": {
+                    "show": true,
+                    "snap": true,
+                    "width": 40,
+                    "height": 40,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "marginWidth": 1000,
+                "marginHeight": 1000,
+                "showCollisionPolygons": false,
+                "showMeshes": false,
+                "showTranslucentInactiveLayers": false,
+                "showSceneGraphConnections": true,
+                "tabColor": [
+                    0.9999999999999999,
+                    0.95,
+                    0.8000000000000002,
+                    1
+                ],
+                "tabTextColor": null,
+                "layers": [
+                    {
+                        "name": "World",
+                        "propertiesBar": {},
+                        "visibleInEditor": true,
+                        "locked": false,
+                        "parallaxInEditor": false,
+                        "opacity": 1,
+                        "translucent": false
+                    },
+                    {
+                        "name": "UI",
+                        "propertiesBar": {
+                            "properties": [
+                                {
+                                    "name": "Layer properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Scroll & zoom",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Parallax",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Appearance",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        },
+                        "visibleInEditor": true,
+                        "locked": false,
+                        "parallaxInEditor": false,
+                        "opacity": 1,
+                        "translucent": false
+                    }
+                ],
+                "instancesRoot": {
+                    "expanded": true,
+                    "subfolders": [],
+                    "misc": {
+                        "global": true,
+                        "layout": []
+                    }
+                },
+                "view": {
+                    "x": 1039.014002633864,
+                    "y": 450.5570591447115,
+                    "z": 201.06582298507337,
+                    "activeLayer": "UI"
+                },
+                "selectedInstances": [],
+                "lockedInstances": [
+                    4
+                ],
+                "instanceCollections": [
+                    {
+                        "uids": [
+                            4
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            5
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            5
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            10
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            3
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Inherited from 'Family1'",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tween",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "AdjustHSL",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            8
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            9
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            2,
+                            3
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Inherited from 'Family1'",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            2,
+                            6
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            6
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            10
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            2
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Inherited from 'Family1'",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tween",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "AdjustHSL",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            7
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tween",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Accessibility",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            16
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            14
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            13
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tween",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tint",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            15
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    },
+                    {
+                        "uids": [
+                            12
+                        ],
+                        "properties": {
+                            "properties": [
+                                {
+                                    "name": "Object type properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Common",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Position",
+                                            "expanded": false,
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Size",
+                                            "expanded": false,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Instance variables",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Behaviors",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tween",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Effects",
+                                    "expanded": true,
+                                    "children": [
+                                        {
+                                            "name": "Tint",
+                                            "expanded": true,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Container",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Template",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Properties",
+                                    "expanded": true,
+                                    "children": []
+                                },
+                                {
+                                    "name": "Editor",
+                                    "expanded": true,
+                                    "children": []
+                                }
+                            ],
+                            "scrollPosition": 0
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "folders": [],
+    "imageData": [
+        "data:image/png;base64,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",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAuJJREFUaEPtVjtu20AQHd0jrniCBEyhRtAdYoAuVKdmYUA5QgS4SJ2aRYjYdzDUqDAhn0CVcw8Gb6VnjNYUyf3YgoDdxqaWO/s+8+FELnxNLhy/JALndjA5kBwIVCA8hYptm08/S1NOwmN5kIlz6RlJxCEA5Q4kKGKzeRapv8SLf8KduBcU29ZwkdWb6+q6jnvX4YboQYuiaKfTqcxms1cS6/VaNpuNvAeJdyGwXC4FoLEAXK/YJPwIqHy3c50OfKoq+dmI/Mj38PF/VmTRXXAnUGzb+933I1Wvs9+mYAEeG7t6Z4B/W8yP3nuoHuW6adzv7GmvbsEO4KGmXlCWwPGXz0glvVarVRQHKBRijyegwC9+LQyuqqwMWBQt8x3qaxJ6D7+H1ACBs8ZQX6MJ3Od5C+UJ3iaAYATf5TiIYr8R9xSygWuxnAlQcQ2Y4ECO7RPpotOKpJheY5zoA454EGMUAaqvQSA1NAntjD0DkGpYJGjPBcTHPgt8DHBi8SaAAJqEJtCVQpwHHHJ2QZPE3ywTFj+JMjW70m+QgK2+nQq6aFmwNgE6xVTjPgBRbZyFU2i//xb7JsFzfXXjTEAPJgIxPb9p5KYoXjsS97qKm6kEF+wuxRnCVj1U9F4E7DkAsIbEfC43Ly9HBtidiUWsUwnvgBTJUqQxQ28UAY3IDppL3uJy2P90qybv3Z059pDn5jOCSuJ9e/B11cyQ8k5F3HUBfiN45uufqyuRA/Cvkr8ZcmidOKPjjQV6CsOgA6cO4nc90vFMAlAd3YSL3QrPY/p/3532njcBfnXqbvEk+48kpg3+10MOz2VZet/ZRcw5mM5hBmShggDAY7FW9Ptw4qwEmL8cWkPfP3RAK9f3veRTzF4OuOSobps4x88KO4ZvMTsT6AJvd5Yhgr5go9TAELiP3o/iwEeD1vclAudUH3cnB5IDgQqkFAoUMPh4ciBYwsAAyYFAAYOPJweCJQwMcPEO/AfOjqyvE7p4UQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAuFJREFUaEPtVjtu20AQHd0jrniCBEyhRtAdbIAuVKdmEUA5QgS4SJ2aRYjYdwjUqDChnECVcw8Gj9IjRpu1tL9YELDb2KR2Z9+b92aGE7nyNbly/JIJXFrBrEBWIDID8Raqtn05fS9dPYmPFUAmzaUXJJGGADJ3IMEkdpvfIu2HdPFfUSftBdW2H7jI6p/r2rZNe9fhhuRBq6rqp9OpzGazkcR6vZbNZiP/g0QYAWUX0yogsFwuBaCxAFyv1CT8CVTb/nH36QjUXfF99DsVeNc08rUT+VLut+L/oiqSq+BH4AAeYPQCSJCg93ftbgB+u5gf7Xtqfsld1/ndaSleJImv3YMp8Itvi+F8UzfDX2QWC8D1M6yk12q1ilKAwGlR2NOZwGNZ9sg8wZMAwKNo6XeThP4Ne0JqwASu7/ImQMBgD7Dms0XxURXs78TdQqeAIyhiORFg9gnORgLgoA7bJ+yibaXPmkogPt6xPlyAe9WAjQACwB5UQlvLnAGsFRK0zQWS+FkUwtrhPtrSpt5ZBUzwZiYZXBOw2YjzgEOOBc1s4z2Ionv9WeybBJNzynbeBHRf10B1MZsEdL2QMLuVWeRswWzV52omiIBtDtx2ndxX1diRSILgNSmzVlg/3MskucwMJwL6cjNoKfsCHAbXfC73Ly9HAuiM6xmh68dmuXOZ9yri11oj3oMAMgr/Pn9Wk/fhYTj2VJbDZwQBYb85+FzB2nCcVcAFPAvux82NyAH4RynHGcHfMcSoGPv4qfguv0UR0N8kuIwEkHW0Qy7aBc8hk/gUkWAC/OrU7e5Z9l95tA09zyLFc13XwXcmsZD2MAOyUEEA4LFY7Ho/lLgoAfqXQ8vWIs0ssWBNsi7+dqkTbzl1EbqAIAEOLH5WmGdDO5E3ARtoX1KhYJPUgEvW33JPEgXeErB5VyZwyezj7qxAViAyA9lCkQmMPp4ViE5hZICsQGQCo49nBaJTGBng6hX4C1Qhsa9Sg6siAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAvNJREFUaEPtVjtu20AQHd0jrniCGEyhRtAdbIAuVLtmYUA5QgSoSK2ahYnYdwjUqPBCPoEq5x4M3pqPGG4YictdWxDAbSRRuzPvMzPLiVz4mlw4fhkJnNvB0YHRgUAFwkso21fp9KuYfBIeawCZOEnPSCIOAShXk6CIZvcqUl7Hi/8fd+ImyPaV5SKrf9KVZRk3V51hWFCltqt0lmXVdDqV2WzWkNhut7Lb7eQjSPgTyPbV0+G+pfBtsmnKBQSWy6UANBaA6xWbhB+BGvwP066Q76nIrTE2Fh34UhSCffgPC9+TLIniAnIQQX8CCvzi58KeL/LCflpgsmxq/1AeLPCbxbzF9Ln43RAdMDGtODhHh+FubwJPaVpBRYInAYBHzSMYgJMQE2mgq9VqkAMucJYm8nkTcAHztw6qSYCc7gWfHjgGHDGNmH63J9Wnml0k8J+ePvfX7UbHGSiGpG75ID6e6T7SpeKKo2P0cqCLAAGzdHRpuSOUvaKdcZ0giV9JYmsci+OXpdlF/iQBF7x2Ad8ZXBPoalCQwB6Q0/cCywTuYQ+a/8/ifUhQnC7gzOFNQI9FDVT3gkuAQLgHJFBibv9QEOTgqD4GHvsHEei6B26Mkbsss32glzud6Nhmv7HbMJnwDO5wL0ViT3Q56uWADgDwWpVU3hvQzv35XO7e3lr5CNgtPXf0uiBPKd+bwDH2+A8EOGFeHtTFtV7bo89passBgEgW+3X/9AXbheVkCXkTqIF/k/odog5AkCSBxyHAozgAMJw+qN/HqyuR9bpR3W1Sn0vslHBRCOiXKgR8LMumbDDPuVjv+B2bxOAS4lsnQHF6vIix6mNxUrE/6FSe54NzRukBNq0Oduym1PvhxFkJsAF13btj0lWJE4fPT+33Hafeduop0qfRSIAXnH4v0ueHTiRvAl2gfUkNBRulB/qo/pl7ojjwmYDdXCOBc6qP3KMDowOBCowlFChg8PHRgWAJAwOMDgQKGHx8dCBYwsAAF+/AXwkQsa940RYoAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAplJREFUaEPtlzFS40AQRdv32Gh1gnWJQIkvAZQIFBMroAqu4CoCkyp2gGrhEk4UMOU9gTbae5j6bTduayWEZ5oCV80kFram9d//rZlhQic+JieunyLAVycYE4gJBDrwZS2U5/mmq72u66P1HD3hQ4bl602a/SJXTg7qa9FZlnGp2WzGn9fTa3LkjtZz9IQPAeCmHQQuk+aKp0G0Fqxr+YjHfDOApzTllrhwbiJO13TLGpEGlWcH7L6CuwaaAaCwQPwrCnYabYHh8oohCnqgpmnIp9eHkjcBgOPS0z+WS37W7yThltF9juvVamUKEQygxcPdtm5ZdLEo/jNN+n8+n5ulEAQg4kV4ta7Y4WW5pCTfJ6BJcC+GVRsFAaSUbsRpEQ1xSAEAfaPNHt++ds0fonoapCFoMgC0UAjvA2KonfCquaIp3dKa5gyC6xCIIABeImm7fAqIrPXSSrIKiWARffC3xw4sMQYDSCENojcsgMx2fc9udwZApt8BQNLQLSXLaNlsjwu6bb5NC3Ud1e+FLKl3KdHPZP9S63fgb9vy7j20UY197z1xqPAQAO4XiIOXOKB9UNMUAOJfyNEZpcyHdkIKSEDGRVK9tVOo+2YAcni7bFs6d47o5mav+P6egQQCAOh/iMcIaR8zgO5S+ljXLO453VoPKLkGwFO7PeSFijcBEPex4mA37htyrJCDnpX4IAAtHIX0QU6f9SUdAQOM1TkoCGCxWPAOPCRcJ6Fhy7I0XTi8i0GUrPNj/11JCmP3ja35fb97A+hi3TbpPugzhMszvADGBL/npDWMF0BXYB+QtdAhU0wAfHrXak4EsHLSt05MwNc5q3kxASsnfevEBHyds5oXE7By0rdOTMDXOat5MQErJ33rnHwCryHcDUB8ekC8AAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAArdJREFUaEPtmD1u20AQhUf3cBWdIAZTsBFyhzhgCtauWRiQj2ABKpKWtYoQcC6hRoUXzgnY5R4y3jqPHq2pH3JWtgmQlURzl++beTM71kQGfk0Grl92ABJJtuVjKYvFQqqqGgRcKwCyMhSIVwDTbCppmspsNhsExCubwEZDgmj1+ZAg9haqhkBNbDabw4WdPW7xXJJ+FldM3qwBHHxRr0woELbocwIdjZQFggDnzMpRAG8LS2Gf2VonAYQQp9RElmW+JtCSeR2tox5jwckA+yC+17VcObezjxaP84TXer0+3gw6QnQCCCEuViv5l+dSFEWzD8TXVS23ybOSOyf+86ey9N9jn/CdAQgBURCPa1WsxMlzFgCArHzLvzax/CUX/pn8Z/7+GYCq+yTZIrI4sRFtLazNPrCOBqjT3+I2f0Wqy14B1C7rtQG6EjcBBIsVfqdY3OPf+CxgcQ8ZussfokD0AtARYIuluPl8vgOhn2XGmvoAhPHUNgOwJnTENQTsxcmWkCzyq2lptlEUgDYIiCQUx/Pry+umbpiFsAV37KK7/5F1XRw+z9qgVXQNAAKFHNroQwHwDAh9j+86I42FggOwTwCjWYhnAEcHjA1aOO1EEFjIGn3sGQ0A9nkQJz+yrJl/NAStg5fG8r8ZYCvizwOI9qevcyI3Ny9OWC795y/yf66ILD4agFdJ4cul/EleBOPEpn0AiSuGdRglk4WYAS0YG1O0bqP4/O7jdFuXQOdB4dLv/EFMt1SsY3HrybVP1wnXmDKwT7x+CUcN3ov9i19ngLZBLmyXGkAPe8gS2yie4QhuyURnAL5MgxwSoAFwEvOKId7chULhp0DFEh6lC1lSH2ttbwvFEmDdZwSwRtC6fsyANYLW9WMGrBG0rh8zYI2gdf2YAWsErevHDFgjaF0/ZsAaQev6J5vSeEDEdlSzAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAkpJREFUaEPtVj1qwzAY/XKPdsoNihYvpZcohuC5s4dCeoQGOnjObAKmlyhdvIjewFN7j5Sn5AUlJBDpU+MGpMU/SPL7+b4nT+TKx+TK8UsmMLaD2YHsgFKBXEJKAdXLswNqCZUbZAeUAqqXZwdCJfwyspaqccvu6lotoHqDEAI78G29WVY1ahIXI0Dwqy34D2tkaezGCRv/V5yUQFmWazrSdd3e3o6AiKxEBOCt2IkR496BSCyJZAQAfv5Y7Cpq8d67exJ5NrKeofbbOhrssXJNQgDgi6KQ+5v9T3z+iPR970jsCGBKQhJqAj54AD5FYugGeTBWUrsQRYD1jLr16x4l5JPgPZ34CxLBBFAKaEIMKPo9LWU+dC4SURry0jgSGHCD93hGOYEE00ebQFivIsAEYbIsm0oWfS90AoAx2Nx04nboZLZNpDdFhEYRwCK6UDWVA9jWrbtC2SdrBO8B3m9sOkEX4B7GKATwYT82V6+1U5TgUTqIURKg8swo9sKoBHAIQWmoT8UJkMBBAuXDMwG9spiWghLiGMWBw+hkrRMUmxr94HqgKFyDA7yvPk/kYwfUue+Cm9gvHz8e+UGXMNtEAmCfAErMH/idOBfoqXlRG6B8ANRXlNGKJILaBMtnJhWBpAAfnUL8CUOSADivBAsHnphMTSX4AyXBf0EAIEjCt5Yxyusp21OpH+3AIbBjZC4BPhkBbSNq1kc1seaDqddmAqkVDd0vOxCqWOr52YHUiobulx0IVSz1/OxAakVD98sOhCqWev7VO/ALFHUqQEry4fMAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAkJJREFUaEPtVjtqw0AQHd8jqXyDsI2akEsEgVGdWkXAOUIMKVS7FgaRS4Q0akRuoCq5h8Nb+5l1sMHMTOIYdht90KzeZ+ZJE7nwNblw/JIJnNvB7EB2wKhAbiGjgOby7IBZQuMG2QGjgOby7IBGwo8ga6maWHpT1yYRTcUm8G29Ka8aE4k/JUDlV1vwb0OQZRg2Tgy6P2N3AmVZrulM13V7+0cCIrISEYAfZJgECfEeiGhIuBIA+Pl9seusxWsfz0nkMch6ht5vaxXYQy3rRgDgi6KQ26v917x/ifR9H0nsCOARJxIuBFLwAHyMxNiNchcG8XRBTYD9jL5N+x4tlJLgOZ3wJqEigFbAEGJB0c9pKfOxi5GI1pCnJpLAghs8xzXaCSSYPpYEQq2ZABOEybJsKln0vdAJAMbicNOJ67GT2TaRXpQRqiaAQrpQNVUE2NZtPELZhyEI7gN8Oth0gi7APayzEMCL09hcPddRUYJH6yBGSYDKM6M4C2clgI8QlIb6VJwACRwk0D78JmBWFtNS0EJcZ3HgZ3Sy1wmKQ415iDNQFHHAAT5Vn1/kQx+pU+6phjhtnzQe+cKYMNtEAuCUAFosXfidOAXosWfUxWgfAE0VZbQiiaA2wfKaSUUwVvCmFOJPGJIEwHkkWDjwwGRqKsEfKAn+CwIAQRKpvYxRHo9Z76G+yYEU2CEivw2c+6tnwDJ4nrWZgKeamr2yAxrVPGuyA55qavbKDmhU86zJDniqqdkrO6BRzbMmO+Cppmavb3gqKkD20HcXAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAkxJREFUaEPtVj1qwzAY/XKPdsoNihYvpZcohuC5s4dCeoQGOnjObAKmlyhdvIjewFN7j5Sn5AUlJCjRT92AtPhX0vv5vmdP5MrH5MrxSyYwtoPZgexAoAK5hAIFDJ6eHQiWMHCB7ECggMHTswO+En4pWUvVmOl3de0tpPdEX+CYtwPf1ptlqsabxJ8TIPjVFvyHVrJUeuOEvvzvOAmBsizXdKjrur09DAERWYkIwGvREyXK3AORS0lEJwDw88diV2GL996ck8izkvUMtd/WF4M9VrZRCQB8URRyf7O/1eePSN/3hsSOAF6JQCIaARs8AJ8iMXSDPCgtsVwIIsB6Rt3adY8SsknwnE7EJOFNAKWAJsSAot/TUuZDZyIRpSEvjSGBATd4jmuUE0gwfXwTCPOiEGCCMFmWTSWLvhc6AcAYbG46cTt0Mtsm0ptHhAYRwGS6UDWVAdjWrTlC2SetBPcB3m5sOkEX4B7GKASwsR2bq9faKErwKB3EKAlQeWYUe2FUAvgIQWmoT8UJkMBBAuXDbwJ6ZTEtBSXEMYoDh9HJWicoNjX6wfRAUZgGB3hbfX6Rj32oXPe8m9guHzseuaFJmG0iAbBNACVmD/xOuICeeu49EQuifADUVpTRiiSC2gTLayYVAYWAD04h/oQhSQCcR4KFA09MpqYS/IGS4L8gQBcO7WWM8njK/lD1gx0gMDpxTh3HAG3vE9QD5wBO/U4mkFph1/rZAZdCqZ9nB1Ir7Fo/O+BSKPXz7EBqhV3rZwdcCqV+nh1IrbBr/V/b3ypA4NIg0AAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAoFJREFUaEPtVz1qwzAUfrlHO+UGxUuW0kMUDMFzZg+F9ggtdPCc2QRMeojSJYvpDTK190j5lHzpQ9hYzrObBqQliZDk7+89ORO58DG5cPwSCZzbwehAdMCoQIyQUUDz9uiAWULjAdEBo4Dm7SYH0jTdEUFVVcezHhJx86/1+K8qvQkA9OO2ko+skNurPfyPb5HNZuO+X28rmWeF+74q89FJdBLw1QSBbbV1AKfpVGazmSOyuC9l+ZbJ6jmX9zqRZVLL6g9c6CQAoIkku7ukdmp+Ih5ZIYu8FMwBbFZkjsTLeiMkRwJf01R0vMyh9w7oJEDw3AfAGMsi20+VuSwOc3AE8XLxEZH50z5KIDYWiSACmjSU5QBIjPnhE79BkNHCNJxhjTSRYERPLfpOAgQLJ9rsR5T00CRY6E0uADwL/tSiDyagAfpkoDgG888CxyeL3CdwBF/mv0dnRe/OFUTA70SukJHtaXp8uO5MmiwIYKDNMkIO/GER64d7ENGbHvdHEAEcrrPKNsmHAgRd0IDpQBsB1kwttcOhG0boJRhMwO9GVFCr3Xa5MV4ASvV98LrW2LLbak7PBxPAg48t9FC0OkJUnp3HRWy9v53PToBFCwX5nZEhOD9CjI0mAGXhXJv6XAuxBo+QbyeI6O6jCfl1QJK8Q7oIhESHa4Ij1HQoSbR1IL0Ha/h6gSiycPuAbVprIsDOoQ/WTvjx4e9/RaCJBIGCDJTXN/WQ4PEcswO6/fnq47+BHkODH5SAdsJXnCSGyr0WZTAH9KH6XWkM0KMTsHaWPvtHcaAPAOvaSMCqoHV/dMCqoHV/dMCqoHV/dMCqoHV/dMCqoHV/dMCqoHX/xTvwA8KJNUDmTGWaAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAhVJREFUaEPtlzFSxDAMRZ17QMUVQkHDcAuaralzFGrqbfYa21BshhtQwT3C/Mn8RSscZmxJgcw41cbJOnr/S5bdpY1f3cbjTw3grx1sDjQHjAq0FKKAj/005cQ8jF2oSObJGfjdLqXP+0uEq2NKr/t5LArEBIDgETguHTzGAMALIBEQ1QBS+RwA1b9+Senj6RvEG8IEQPVl4kBpnU50IsIFNwDmOhTnJQPH2Pt4m276k2squQBI1Zk6CFZfCB7jYxqrv6vnrJ5I1wAmBggDR7BIJY7hni78GwCmBFXRqu+eT+dlFM9471nIJgeg8H64TBWmCaAQsH7uDVEN0Kd+YrBMD1moVBz9AcsoVef/vFyoBkCwCCantARjH9ABo4Y8IEwAhEBaDMO855HO4P7hbS5e6cKP5ckwYAaQQUNRAMjixXP2hggIdwDpilxC2Z29IVwAtAsSAr+xErEvsF945D/mcgPIpTHTSUN47olCAaQT7AdccjfhQG5Vkj3DA2IVB+Q+CFCsBy69hlU0tgYYGHsDtx4AWGpwpTDhDsg04gGIq5IHxCoAOQgegLjlrq2H1QA0BPOf54pNAOQaHsYsG7tVHVgCKC1c+X4DqFHPkjL6e+4O8JCjP+R5kA9JoaXAcw55wpgdKAlcwnhBmAG0wr8BeQUdkkI1xezxH3cHPIIqmaMBlKgV8W5zIELVkjmbAyVqRbz7BQHKLUDdqpBRAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAhxJREFUaEPtmDFSwzAQReV7QMUVTEHDcAua1NQ5CjV1Gq5BQxEPN6CCe5j5k/mwWeRMrP0yeEausBxL/+3f1cp0aeVXt3L9qQH8tYPNgeZAMAKyFLrvxzGn5XnoZGvk5g9PTuE3m5Q+b4+XuHhJ6XV3GKsFEgKAeAjH5cVjDAC8AFIDohjARj4HwOhfPqX08fADooYIATD6NnEQaZ9OdKKGCzIA5joizssKx9j7cJ2u+r00lSQANupMHYj1F8RjfEhD8bp+zuKJfA1gYoBQOMQilTiGe7rwbwCYEoyKj/rmcf+9jeIZ75WFHHIAEd5tj1OFaQIoCPbP1RDFAH3qR4plethCZcTRH7CNMup8T+VCMQDEQkwu0haMfcALRg0pIEIAhEBabLeHM491Bvd3b4fitS782p4CA2EAKxoRBYAtXjxnb6gBIQewrtgtlN1ZDSEB8C5YCPyNnYh9gf1Ckf+YSwaQS2Omk4dQnomqAlgn2A+45a7CgdyuZHuGAmIRB+w5CFCsB269gV20bg1QGHsDjx4AmGpwc2GqO2DTiB9A3JUUEIsA5CD4AcQjd2k9LAbgIZj//K5YBUCu4WEscrBb1IEpgLmFa3/fAEqiF0kZv97iDpQAn3pHDsCvNL+o8j8RVWpgSnguekqYsANzhFsYFUQYwEf4FJBKdJUUUhfnufPJHTh3YdXvGoAqkqXzNAdKI6d6rzmgimTpPF/vgS1A4KYR7AAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAhhJREFUaEPtmD1SwzAQheV7QMUVTEHDcAua1NQ+CjV1Gq5BQxEPN6CCe5h5k3mwWRQm1j4ZzEhVLNvyfvv2R0qXVj66ldufGsBvK9gU+DcK3PbTlIN5HLuqKocXp+FXm5Terw8Rzp5Set7u52qBhABgPAzH8MZjDgAcAKkBUQxgPZ8DoPfPH1J6u/sCUUOEAOh9GzjwtA8nKlFDBRkAYx0e57CGY+51vEwX/U4aShIA63WGDoz1A8Zjfkxj8Xf9msUL+RzAwgCh4TAWocQ5XFOFPwPAkKBXvNc397vPMop7vFYmckgBeHg7HIYKwwRQMNjfV0MUA/Spn2gsw8MmKj2O/oAySq/zPZUKxQAwFsbkPG3B2Ae8wcghBUQIgBAIi2HY73msMri+edknr1XhW3kKTIQBrNHwKABs8uI+e0MNCDmAVcWWUHZnNYQEwKtgIfAblYh9gf1CEf9YSwaQC2OGk4dQ7omqAlgl2A9YclehQK4q2Z6hgFhEAbsPAhTzgaU3UEXr5gANY2/g1gMAxxrcXJjqCtgw4gGIVUkBsQhADoIHIG65S/NhMQAPwfjnuWIVALmGh7nIxm5RBY4BzE1c+3wDKPFeJGT89xZXoAT4p3cagPcOj5l+XvlXSpUkPmZ4Tn4lTDiE5hhuYVQQYYBTQwjPqYyuEkLq6nLqenIFTv2w6rkGoPJk6TpNgVLPqd5rCqg8WbrOB91HLUBDWHl6AAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAh9JREFUaEPtVztSwzAQVe4BFVcwBQ3DLWhSU+coqanTcA0aini4ARXcw8wj8zLLIom1V5tMZuQmjiNt3m8leZUu/FpdOP7UCZzbwe5Ad8CpQI+QU0D39O6AW0JngXAHHodpqmF8GVcuDK7JACYBSjB8frfOw/+6Pzz/fErJQ8JNACCGNEw3w/4IpKY6CZGAl0QTApKE1ls78LY7jJBEPC40I0AS+IQbH+Ptn+zgOYGDyPVzSlevKeF+aYzcBHQP4HsOvGRDIiRxNgcIXioJoP8RoEtwg5HCnDGNswWdPYGgYTnuNXjmG03KeFB9TUw6cRICGjBIbLfTBBUJbr3dJ4BHLOSF33O9gWd0LdwBEKDt+NxsfhMAABLS4BkbHbGTEyjtqowAI1ZbhXabwwrlBY8ai3qAcZDZfnjf/2QeFyMFR7jJcQ6cAwGC98RnNoGSugRfWlFAQq480oGlzUvxzA5I8LrZdO5LoHQNfQQpxbP23EyAKuZWCr0S6TGy+SW5kxKoqcDdN0cOILG0MjZyTG2e1Q2zA7qgPnGWYkMCbG555sFvS9Z+iWUxARRhrHBfAyI3QOwdVnUt45oWK/2h7IGlp85S7eYESm9icm+wKGsd05RA7k1M7sjevOdINSFQOz5EgG7WxCgkX2CiwYY5YM1rxLgmEYoAZq3ZCViVihrXHYhS1lq3O2BVKmpcdyBKWWvd7oBVqahx3YEoZa11vwGKhlNAnEU5xgAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAcdJREFUaEPtltFtwzAMRJmRCmgAz9EBOoEzRT1BB+gc/q+QjpTgCl/ACjYQhec2AeifILKi3OORIg/25M/hyfVbAvy3g+lAOhCMQKZQMIDhn6cD4RAGD0gHggEM/zwdCIcweIDMgbHYeUvLVPcbGiUAEP8+jFf93/Nkn2bGteM8/bzbAyQM4MVTOMS+LjgvCxjfqSHCAMXK+aNUe6vFhlJtruXqBL4TBiB7QIQBTkvuI2XweACSAISOYJ/ShTCAL9418b6w6chDAUAg0gif1eqvgHAd7+gCUq3dF7lJww7c8ucAIcDDpdAWAFLL5z3Si0WuTKVdHKB4FjYhAYQ1wih6gxyA1yrFo2B9CqEG8ODqVaSTHMBHn7cSUgZdmX0A6wSIurALAAWyC0MkxPtm9zUOksYmB4BY9oa1wqUrBIheqxKAdhL1qcMCbkcMVWcOAax1YT82sGD9SMFawBpvpEhjuxvAp4kXgHWmDqMMse1U6h35cwCK9zNNOza0+b/2fW38uKWz+z13O+APgXgfRQ+zJSgSdTlAb9SU+yUOKAX1npUAvRFT708H1BHtPS8d6I2Yen86oI5o73npQG/E1PvTAXVEe8+7ADWs1zFFq7IuAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAcRJREFUaEPtltFtwzAMRJmRCmgAz9EBOoE7RT1BB+gc/q+QjpTiCl/ACg4Qmec2BuifILKi3OORIk928Od0cP2WAP/tYDqQDgQjkCkUDGD45+lAOITBA9KBYADDP08HwiEMHiB1YCx2uaVnqvsMjjIAiH8bxqv+r3myDzPj2us8/bxTg0gAvHgKh9jnBedpAeM7JYQEoFi5vJdqL7XYUKrNtVydwHfCAEQNIQE4L7mPlMHjAUgCEDqCfSoXJAC+eNfE+8KmIw8FAIFII3xWq7+CwnW8owtItXbf1ttU4sA9fw4QAjxcCt0CQGr5vEd6schVqbSbAxTPwiYkgLBGmGhv2AWA1yrFo2B9CqEG8ODqjabTLgA++ryVkDLoyuwDWCdAxIXdACiQXRgiId43u89xCDe2XQAglr1hrXDpCgEi16oMoJ1EfeqwgNsRQ9GZwwBrXdiPDSxYP1KwFrDGG2lrYwsB+DTxArDO1GGUIbadSr0jfw5A8X6maceGNv/Xvq+NH/d0du4JOcBD2jnIg9wSszXi7XkSgJ6IqfcmgDqiveelA70RU+9PB9QR7T0vHeiNmHp/OqCOaO956UBvxNT7D+/AN+sM1zEMZKTxAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAcZJREFUaEPtltFtwzAMRJmRCmgAz9EBOoE7RT1BB+gc/q+QjpTiCl/ACgoQmWQbA/RPEFlR7vFIkSc5+HM6uH5JgP92MB1IB4wRyBQyBtD883TAHELjAemAMYDmn6cD5hAaD3B3YC5yuaVpqf7DoysAxL9N81X/17rIh4hw7XVdft55grgBaPEUDrHPG87TBsZ3XhBuAEXK5b1UealFplJlreXqBL4TBiCeEG4A5y33kTJ4NABJAEJHsM/DBTcAXbw98bqw6chDAUAg0gifVeqvwHAd7+gCUq3dt+dGdXPgnj8HCAEeLoVuASC1dN4jvVjkHqkU6gDFs7AJCSCsEcbSG8IAeK1SPApWpxBqAA+uXks6hQHo6PNWQsqgK7MPYJ0Ae10IBaBAdmGIhHjd7D7nydTYwgAglr2hV7h0hQB7r1VXgHYS1anDAm5HDGtndgHodWE9NrBg9UjBWsAab6Q9jc0MoNNEC8A6U4dRhth2KtWO/DkAxXOm0SMDx4Y2/3vfe+PHPZ0de8wO9GagFqQnZk+0e+e4ANwbrYh9CRAR1ZEz04GRaEXsTQciojpyZjowEq2IvelARFRHzkwHRqIVsffwDnwDrHvXMRsr7IIAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAehJREFUaEPtV9tNAzEQdEpCcgGpgwKoIHRxFVAAdVwBFpQUNCcmGsw6l8tucneS/ROU+DGPfXFIO1+HneNPncDaDnYHugNOBXoIOQV0H+8OuCV0XtAdcAroPn5x4JTT2bptLDkdc0lD2ebYMREg+FeDwcvxlL7HIb2VPP1aUtlU2E1gcspnqAy1sfg3PkEKJLDex2HasyUSf0KoJkAydAYugFS91gyvf+EAN6xcIHCSoSt0Zi0SZjy3SNARElQyCK81SJgEkNQMJ3VD84Tfa56sQaJZUZTERy7pM6VLktchRhLY82wXZgnMgScZ7osi0OpLeE/fuEqA4FqlU3OFSW4RsMC0iGpPqst3nYO442pTIsBrdV9JWC4AkPYSgEBjtMKNe7EHv2MxF4mhxuTuqrzQygMFT9AAxepFkFDy63eUYa6xYMw1zacQoKJa2ayGqCF769jiJsBRBJ91CNEBqqpq6viio8vSUSWMgCrKBNVSbIWC1TDnQqYu4WEEage08ixV1RplWt+FEdBZSSvIrcm4BLTuDSXAf370gUeqj3dCCDCRNQ9IZncE1IVHgw91QMspQ2hpRbknD8JC6J7HI850AhEqeu7oDnjUizjbHYhQ0XNHd8CjXsTZ7kCEip47ugMe9SLO7t6BH2CHAkDkeyqvAAAAAElFTkSuQmCC",
+        "data:image/png;base64,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",
+        "data:image/png;base64,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",
+        "data:image/png;base64,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",
+        "data:image/png;base64,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"
+    ]
+}

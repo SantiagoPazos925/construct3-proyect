@@ -190,6 +190,13 @@
                             }
                         },
                         {
+                            "id": "set-mirrored",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "state": "mirrored"
+                            }
+                        },
+                        {
                             "type": "script",
                             "language": "javascript",
                             "script": [
@@ -408,6 +415,332 @@
                 },
                 {
                     "eventType": "comment",
+                    "text": "=== SISTEMA DE ANIMACIONES DEL PLAYERCOMBAT ==="
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-start-of-layout",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"playerAttacking\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Travel\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"playerReturning\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Backward\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"playerTurn\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"turnPauseToEnemy\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"turnPauseToPlayer\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== SISTEMA DE ANIMACIONES DEL ENEMYCOMBAT ==="
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-start-of-layout",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"enemyAttacking\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Travel\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"enemyReturning\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Backward\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"enemyTurn\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"turnPauseToEnemy\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"turnPauseToPlayer\""
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Idle\"",
+                                "from": "beginning"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
                     "text": "=== SISTEMA DE MOVIMIENTO CONSOLIDADO ==="
                 },
                 {
@@ -432,7 +765,7 @@
                             "id": "set-position",
                             "objectClass": "PlayerCombat",
                             "parameters": {
-                                "x": "PlayerCombat.X + (targetX - PlayerCombat.X) * moveSpeed",
+                                "x": "PlayerCombat.X + ( targetX- PlayerCombat.X ) * moveSpeed",
                                 "y": "PlayerCombat.Y + (targetY - PlayerCombat.Y) * moveSpeed"
                             }
                         },
@@ -556,7 +889,7 @@
                             "parameters": {
                                 "first-value": "distance(PlayerCombat.X, PlayerCombat.Y, targetX, targetY)",
                                 "comparison": 2,
-                                "second-value": "50"
+                                "second-value": "500"
                             }
                         },
                         {
@@ -565,6 +898,33 @@
                         }
                     ],
                     "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "animation": "\"Attack\"",
+                                "from": "beginning"
+                            }
+                        },
+                        {
+                            "id": "wait",
+                            "objectClass": "System",
+                            "parameters": {
+                                "seconds": "0.5",
+                                "use-timescale": true
+                            }
+                        },
+                        {
+                            "id": "play",
+                            "objectClass": "Audio",
+                            "parameters": {
+                                "audio-file": "Player_Sword_1",
+                                "loop": "not-looping",
+                                "volume": "0",
+                                "stereo-pan": "0",
+                                "tag-optional": "\"PlayerAttack\""
+                            }
+                        },
                         {
                             "id": "tween-value",
                             "objectClass": "EnemyCombat",
@@ -638,17 +998,6 @@
                             }
                         },
                         {
-                            "id": "play",
-                            "objectClass": "Audio",
-                            "parameters": {
-                                "audio-file": "Player_Sword_1",
-                                "loop": "not-looping",
-                                "volume": "0",
-                                "stereo-pan": "0",
-                                "tag-optional": "\"PlayerAttack\""
-                            }
-                        },
-                        {
                             "id": "set-text",
                             "objectClass": "Damage",
                             "parameters": {
@@ -660,7 +1009,7 @@
                             "objectClass": "Damage",
                             "parameters": {
                                 "x": "EnemyCombat.X",
-                                "y": "EnemyCombat.Y - 50"
+                                "y": "EnemyCombat.Y - 300"
                             }
                         },
                         {
@@ -678,7 +1027,7 @@
                                 "tags": "\"DamageFloat\"",
                                 "property": "position",
                                 "end-x": "Damage.X",
-                                "end-y": "Damage.Y - 100",
+                                "end-y": "Damage.Y - 300",
                                 "time": "1.5",
                                 "ease": "easeinsine",
                                 "destroy-on-complete": "no",
@@ -762,7 +1111,7 @@
                             "parameters": {
                                 "first-value": "distance(EnemyCombat.X, EnemyCombat.Y, targetX, targetY)",
                                 "comparison": 2,
-                                "second-value": "50"
+                                "second-value": "500"
                             }
                         },
                         {
@@ -771,6 +1120,22 @@
                         }
                     ],
                     "actions": [
+                        {
+                            "id": "set-animation",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "animation": "\"Attack\"",
+                                "from": "beginning"
+                            }
+                        },
+                        {
+                            "id": "wait",
+                            "objectClass": "System",
+                            "parameters": {
+                                "seconds": "0.5",
+                                "use-timescale": true
+                            }
+                        },
                         {
                             "id": "tween-value",
                             "objectClass": "PlayerCombat",
@@ -857,7 +1222,7 @@
                             "objectClass": "Damage",
                             "parameters": {
                                 "x": "PlayerCombat.X",
-                                "y": "PlayerCombat.Y - 50"
+                                "y": "PlayerCombat.Y - 300"
                             }
                         },
                         {
@@ -875,7 +1240,7 @@
                                 "tags": "\"DamageFloat\"",
                                 "property": "position",
                                 "end-x": "Damage.X",
-                                "end-y": "Damage.Y - 100",
+                                "end-y": "Damage.Y - 300",
                                 "time": "1.5",
                                 "ease": "easeinsine",
                                 "destroy-on-complete": "no",

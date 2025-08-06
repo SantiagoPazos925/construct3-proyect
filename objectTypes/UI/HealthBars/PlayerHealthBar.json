@@ -1,0 +1,38 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "PlayerHealthBar",
+            "plugin-id": "TiledBg",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [],
+            "image": {
+                "width": 24,
+                "height": 40,
+                "originX": 0.5,
+                "originY": 0.5,
+                "originalSource": "",
+                "exportFormat": "lossless",
+                "exportQuality": 0.8,
+                "fileType": "image/png",
+                "imageDataIndex": 0,
+                "useCollisionPoly": true,
+                "tag": ""
+            }
+        }
+    ],
+    "folders": [],
+    "imageData": [
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAoCAYAAADkDTpVAAAAAXNSR0IArs4c6QAAAHNJREFUSIljrOYT/s9AQ8ACY6Rws1LV4DlffzMwMDAwMFHVVCxg1IKBtwCeisTz0qhrcvtUBoZhEURD3wJ4JL+cNIsmFgz9IBq1YNSCIWABPCdf/MdIEwuGfhCNWjBqwagF9CyLrv79SxMLhn4QjVpAEAAADpYNsKzGuRkAAAAASUVORK5CYII="
+    ]
+}

@@ -1,0 +1,308 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [
+        {
+            "name": "Family1",
+            "plugin-id": "Sprite",
+            "instanceVariables": [
+                {
+                    "name": "Strength",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Vitality",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Agility",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Speed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "Defense",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "MaxHealth",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "HealthRegen",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "PhysicalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "AttackSpeed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "DodgeChance",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "MovementSpeed",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "CriticalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "CriticalChance",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "DamageReduction",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "FinalDamage",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                },
+                {
+                    "name": "FinalDamageTaken",
+                    "type": "number",
+                    "desc": "",
+                    "show": true
+                }
+            ],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "members": [
+                "PlayerCombat"
+            ]
+        }
+    ],
+    "items": [
+        {
+            "name": "PlayerCombat",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [
+                {
+                    "behaviorId": "Tween",
+                    "name": "Tween"
+                }
+            ],
+            "effectTypes": [
+                {
+                    "effectId": "hsladjust",
+                    "name": "AdjustHSL"
+                }
+            ],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 0,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 1,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            },
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 2,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.08333333333333333,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.23958333333333334,
+                                        0.9166666666666666,
+                                        0.7604166666666666,
+                                        0.08333333333333333,
+                                        0.7604166666666666
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Idle",
+                        "isLooping": true,
+                        "isPingPong": true,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 6
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 3,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.19791666666666666,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.8125,
+                                        0.19791666666666666,
+                                        0.8125
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Travel",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 4
+                    },
+                    {
+                        "frames": [
+                            {
+                                "width": 48,
+                                "height": 48,
+                                "originX": 0.5,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 4,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.19791666666666666,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.1875,
+                                        0.8020833333333334,
+                                        0.8125,
+                                        0.19791666666666666,
+                                        0.8125
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Attack",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 4
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            }
+        }
+    ],
+    "folders": [],
+    "imageData": [
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAuJJREFUaEPtVjtu20AQHd0jrniCBEyhRtAdYoAuVKdmYUA5QgS4SJ2aRYjYdzDUqDAhn0CVcw8Gb6VnjNYUyf3YgoDdxqaWO/s+8+FELnxNLhy/JALndjA5kBwIVCA8hYptm08/S1NOwmN5kIlz6RlJxCEA5Q4kKGKzeRapv8SLf8KduBcU29ZwkdWb6+q6jnvX4YboQYuiaKfTqcxms1cS6/VaNpuNvAeJdyGwXC4FoLEAXK/YJPwIqHy3c50OfKoq+dmI/Mj38PF/VmTRXXAnUGzb+933I1Wvs9+mYAEeG7t6Z4B/W8yP3nuoHuW6adzv7GmvbsEO4KGmXlCWwPGXz0glvVarVRQHKBRijyegwC9+LQyuqqwMWBQt8x3qaxJ6D7+H1ACBs8ZQX6MJ3Od5C+UJ3iaAYATf5TiIYr8R9xSygWuxnAlQcQ2Y4ECO7RPpotOKpJheY5zoA454EGMUAaqvQSA1NAntjD0DkGpYJGjPBcTHPgt8DHBi8SaAAJqEJtCVQpwHHHJ2QZPE3ywTFj+JMjW70m+QgK2+nQq6aFmwNgE6xVTjPgBRbZyFU2i//xb7JsFzfXXjTEAPJgIxPb9p5KYoXjsS97qKm6kEF+wuxRnCVj1U9F4E7DkAsIbEfC43Ly9HBtidiUWsUwnvgBTJUqQxQ28UAY3IDppL3uJy2P90qybv3Z059pDn5jOCSuJ9e/B11cyQ8k5F3HUBfiN45uufqyuRA/Cvkr8ZcmidOKPjjQV6CsOgA6cO4nc90vFMAlAd3YSL3QrPY/p/3532njcBfnXqbvEk+48kpg3+10MOz2VZet/ZRcw5mM5hBmShggDAY7FW9Ptw4qwEmL8cWkPfP3RAK9f3veRTzF4OuOSobps4x88KO4ZvMTsT6AJvd5Yhgr5go9TAELiP3o/iwEeD1vclAudUH3cnB5IDgQqkFAoUMPh4ciBYwsAAyYFAAYOPJweCJQwMcPEO/AfOjqyvE7p4UQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAuFJREFUaEPtVjtu20AQHd0jrniCBEyhRtAdbIAuVKdmEUA5QgS4SJ2aRYjYdwjUqDChnECVcw8Gj9IjRpu1tL9YELDb2KR2Z9+b92aGE7nyNbly/JIJXFrBrEBWIDID8Raqtn05fS9dPYmPFUAmzaUXJJGGADJ3IMEkdpvfIu2HdPFfUSftBdW2H7jI6p/r2rZNe9fhhuRBq6rqp9OpzGazkcR6vZbNZiP/g0QYAWUX0yogsFwuBaCxAFyv1CT8CVTb/nH36QjUXfF99DsVeNc08rUT+VLut+L/oiqSq+BH4AAeYPQCSJCg93ftbgB+u5gf7Xtqfsld1/ndaSleJImv3YMp8Itvi+F8UzfDX2QWC8D1M6yk12q1ilKAwGlR2NOZwGNZ9sg8wZMAwKNo6XeThP4Ne0JqwASu7/ImQMBgD7Dms0XxURXs78TdQqeAIyhiORFg9gnORgLgoA7bJ+yibaXPmkogPt6xPlyAe9WAjQACwB5UQlvLnAGsFRK0zQWS+FkUwtrhPtrSpt5ZBUzwZiYZXBOw2YjzgEOOBc1s4z2Ionv9WeybBJNzynbeBHRf10B1MZsEdL2QMLuVWeRswWzV52omiIBtDtx2ndxX1diRSILgNSmzVlg/3MskucwMJwL6cjNoKfsCHAbXfC73Ly9HAuiM6xmh68dmuXOZ9yri11oj3oMAMgr/Pn9Wk/fhYTj2VJbDZwQBYb85+FzB2nCcVcAFPAvux82NyAH4RynHGcHfMcSoGPv4qfguv0UR0N8kuIwEkHW0Qy7aBc8hk/gUkWAC/OrU7e5Z9l95tA09zyLFc13XwXcmsZD2MAOyUEEA4LFY7Ho/lLgoAfqXQ8vWIs0ssWBNsi7+dqkTbzl1EbqAIAEOLH5WmGdDO5E3ARtoX1KhYJPUgEvW33JPEgXeErB5VyZwyezj7qxAViAyA9lCkQmMPp4ViE5hZICsQGQCo49nBaJTGBng6hX4C1Qhsa9Sg6siAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAvNJREFUaEPtVjtu20AQHd0jrniCGEyhRtAdbIAuVLtmYUA5QgSoSK2ahYnYdwjUqPBCPoEq5x4M3pqPGG4YictdWxDAbSRRuzPvMzPLiVz4mlw4fhkJnNvB0YHRgUAFwkso21fp9KuYfBIeawCZOEnPSCIOAShXk6CIZvcqUl7Hi/8fd+ImyPaV5SKrf9KVZRk3V51hWFCltqt0lmXVdDqV2WzWkNhut7Lb7eQjSPgTyPbV0+G+pfBtsmnKBQSWy6UANBaA6xWbhB+BGvwP066Q76nIrTE2Fh34UhSCffgPC9+TLIniAnIQQX8CCvzi58KeL/LCflpgsmxq/1AeLPCbxbzF9Ln43RAdMDGtODhHh+FubwJPaVpBRYInAYBHzSMYgJMQE2mgq9VqkAMucJYm8nkTcAHztw6qSYCc7gWfHjgGHDGNmH63J9Wnml0k8J+ePvfX7UbHGSiGpG75ID6e6T7SpeKKo2P0cqCLAAGzdHRpuSOUvaKdcZ0giV9JYmsci+OXpdlF/iQBF7x2Ad8ZXBPoalCQwB6Q0/cCywTuYQ+a/8/ifUhQnC7gzOFNQI9FDVT3gkuAQLgHJFBibv9QEOTgqD4GHvsHEei6B26Mkbsss32glzud6Nhmv7HbMJnwDO5wL0ViT3Q56uWADgDwWpVU3hvQzv35XO7e3lr5CNgtPXf0uiBPKd+bwDH2+A8EOGFeHtTFtV7bo89passBgEgW+3X/9AXbheVkCXkTqIF/k/odog5AkCSBxyHAozgAMJw+qN/HqyuR9bpR3W1Sn0vslHBRCOiXKgR8LMumbDDPuVjv+B2bxOAS4lsnQHF6vIix6mNxUrE/6FSe54NzRukBNq0Oduym1PvhxFkJsAF13btj0lWJE4fPT+33Hafeduop0qfRSIAXnH4v0ueHTiRvAl2gfUkNBRulB/qo/pl7ojjwmYDdXCOBc6qP3KMDowOBCowlFChg8PHRgWAJAwOMDgQKGHx8dCBYwsAAF+/AXwkQsa940RYoAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAplJREFUaEPtlzFS40AQRdv32Gh1gnWJQIkvAZQIFBMroAqu4CoCkyp2gGrhEk4UMOU9gTbae5j6bTduayWEZ5oCV80kFram9d//rZlhQic+JieunyLAVycYE4gJBDrwZS2U5/mmq72u66P1HD3hQ4bl602a/SJXTg7qa9FZlnGp2WzGn9fTa3LkjtZz9IQPAeCmHQQuk+aKp0G0Fqxr+YjHfDOApzTllrhwbiJO13TLGpEGlWcH7L6CuwaaAaCwQPwrCnYabYHh8oohCnqgpmnIp9eHkjcBgOPS0z+WS37W7yThltF9juvVamUKEQygxcPdtm5ZdLEo/jNN+n8+n5ulEAQg4kV4ta7Y4WW5pCTfJ6BJcC+GVRsFAaSUbsRpEQ1xSAEAfaPNHt++ds0fonoapCFoMgC0UAjvA2KonfCquaIp3dKa5gyC6xCIIABeImm7fAqIrPXSSrIKiWARffC3xw4sMQYDSCENojcsgMx2fc9udwZApt8BQNLQLSXLaNlsjwu6bb5NC3Ud1e+FLKl3KdHPZP9S63fgb9vy7j20UY197z1xqPAQAO4XiIOXOKB9UNMUAOJfyNEZpcyHdkIKSEDGRVK9tVOo+2YAcni7bFs6d47o5mav+P6egQQCAOh/iMcIaR8zgO5S+ljXLO453VoPKLkGwFO7PeSFijcBEPex4mA37htyrJCDnpX4IAAtHIX0QU6f9SUdAQOM1TkoCGCxWPAOPCRcJ6Fhy7I0XTi8i0GUrPNj/11JCmP3ja35fb97A+hi3TbpPugzhMszvADGBL/npDWMF0BXYB+QtdAhU0wAfHrXak4EsHLSt05MwNc5q3kxASsnfevEBHyds5oXE7By0rdOTMDXOat5MQErJ33rnHwCryHcDUB8ekC8AAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAArdJREFUaEPtmD1u20AQhUf3cBWdIAZTsBFyhzhgCtauWRiQj2ABKpKWtYoQcC6hRoUXzgnY5R4y3jqPHq2pH3JWtgmQlURzl++beTM71kQGfk0Grl92ABJJtuVjKYvFQqqqGgRcKwCyMhSIVwDTbCppmspsNhsExCubwEZDgmj1+ZAg9haqhkBNbDabw4WdPW7xXJJ+FldM3qwBHHxRr0woELbocwIdjZQFggDnzMpRAG8LS2Gf2VonAYQQp9RElmW+JtCSeR2tox5jwckA+yC+17VcObezjxaP84TXer0+3gw6QnQCCCEuViv5l+dSFEWzD8TXVS23ybOSOyf+86ey9N9jn/CdAQgBURCPa1WsxMlzFgCArHzLvzax/CUX/pn8Z/7+GYCq+yTZIrI4sRFtLazNPrCOBqjT3+I2f0Wqy14B1C7rtQG6EjcBBIsVfqdY3OPf+CxgcQ8ZussfokD0AtARYIuluPl8vgOhn2XGmvoAhPHUNgOwJnTENQTsxcmWkCzyq2lptlEUgDYIiCQUx/Pry+umbpiFsAV37KK7/5F1XRw+z9qgVXQNAAKFHNroQwHwDAh9j+86I42FggOwTwCjWYhnAEcHjA1aOO1EEFjIGn3sGQ0A9nkQJz+yrJl/NAStg5fG8r8ZYCvizwOI9qevcyI3Ny9OWC795y/yf66ILD4agFdJ4cul/EleBOPEpn0AiSuGdRglk4WYAS0YG1O0bqP4/O7jdFuXQOdB4dLv/EFMt1SsY3HrybVP1wnXmDKwT7x+CUcN3ov9i19ngLZBLmyXGkAPe8gS2yie4QhuyURnAL5MgxwSoAFwEvOKId7chULhp0DFEh6lC1lSH2ttbwvFEmDdZwSwRtC6fsyANYLW9WMGrBG0rh8zYI2gdf2YAWsErevHDFgjaF0/ZsAaQev6J5vSeEDEdlSzAAAAAElFTkSuQmCC"
+    ]
+}

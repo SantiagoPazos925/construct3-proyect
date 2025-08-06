@@ -1,0 +1,70 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "EnemyHealthBarBG",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 600,
+                                "height": 60,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 0,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.9666666666666667,
+                                        0.25,
+                                        0.9666666666666667,
+                                        0.7333333333333333,
+                                        0.9566666666666667,
+                                        0.7833333333333333,
+                                        0.05666666666666664,
+                                        0.7833333333333333,
+                                        0.046666666666666634,
+                                        0.7333333333333333,
+                                        0.046666666666666634,
+                                        0.25,
+                                        0.05666666666666664,
+                                        0.2,
+                                        0.9566666666666667,
+                                        0.2
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            }
+        }
+    ],
+    "folders": [],
+    "imageData": [
+        "data:image/png;base64,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"
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "PlayerHealthBarBorder",
+            "plugin-id": "Sprite",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": [],
+            "animations": {
+                "items": [
+                    {
+                        "frames": [
+                            {
+                                "width": 600,
+                                "height": 60,
+                                "originX": 0,
+                                "originY": 0.5,
+                                "originalSource": "",
+                                "exportFormat": "lossless",
+                                "exportQuality": 0.8,
+                                "fileType": "image/png",
+                                "imageDataIndex": 0,
+                                "collisionPoly": {
+                                    "points": [
+                                        0.021666666666666667,
+                                        0,
+                                        0.9783333333333334,
+                                        0,
+                                        0.98,
+                                        1,
+                                        0.023333333333333334,
+                                        1,
+                                        0.0033333333333333335,
+                                        0.8
+                                    ]
+                                },
+                                "useCollisionPoly": true,
+                                "duration": 1,
+                                "tag": ""
+                            }
+                        ],
+                        "name": "Animation 1",
+                        "isLooping": false,
+                        "isPingPong": false,
+                        "repeatCount": 1,
+                        "repeatTo": 0,
+                        "speed": 5
+                    }
+                ],
+                "subfolders": [],
+                "name": "Animations"
+            }
+        }
+    ],
+    "folders": [],
+    "imageData": [
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAA8CAYAAAC6nMS5AAAAAXNSR0IArs4c6QAABFJJREFUeJzt3TFy20YYgNFlqBmqcyGfwTOpVGUmddqcwGfwBVS69BVyAp9ArWq3SpMZNbmAVHjciAVHKWxE4HpBYhcLkgDf6ygRElTpm3+Xi0UosFxdvZRcBwAwNZv10yL3ml9yLxBXAAC7XZRe+O3jh7p3AjPzeHt37FsAODtv//xj0PWPt3fhr7//CZ/Ww+6jOLA4Tf6pAzBnXx4ewu/v3nV+//H2rjiymv+h15fLENab/7++XF295C4TZr25vTz472+/hi8PDzmXAwCMph1euZHVHlA0ffP+62brPTmRlb0HK1geBABOUHvwk7Oik4qrlJx96L1LLJ5e7bsJAIBjiJcQu6ZZcYSluiaeYoWek6xegdWOq28fP4TH2ztxBQCcrF37tFJ2dU1JZO1dIkzFFQDAKcsZBO177+c3y5++tm+5cGd9dcWV6RUAMBVd06ycnrl/3nQe3ZCaZiWPaYirbGhcpUZrAABjiCdOxxgM/VRc8dQqtDaB5d6gsAIAjiG1rDfE/fNr06QmWfEUa+tFE1dxWIXMuCrdcQ8AMERqb1SN2GoHVkhEVmdgpY5hCMIKAJiYrg3oQ0IrDqywJ7KSgVVyA0NOOwUAGEMcWyWNk4qrRldkFZ3kHmvH1Wb9tBBXAMApiLuk9v7wm9X26yboBgdWHFdDfx4AQG2lkbVretVlubp6GRRY4goAmIrcyOobV/EUKwyZYIkrAGBq+kZWyeSqbfASobgCAKZkX7uUxFU8xSoKLAeIAgBz0G6a++fN4MlVY9AEy/QKAJiisRsmO7BMrwCAOWna5vqy3uN1iidYplcAwJSN2TJZgWV6BQDMUe3GKZpgmV4BAHMwVtNUeVQOAMAc1NqHJbAAACq76POmWmdCAACcg52BJawAAPJZIgQAqExgAQBUJrAAACoTWAAAlRUF1nJ19VL/VgAADmuspskKrJvVGLcAAHBcn9/Ue9BzGLJEaIoFAEzZmC2THVimWADAnNSeXoWhm9xNsQCAKepqmFqHrBcFlikWADAHY0yvQo1jGkyxAIApGWN69Wm9/bo4sNpTLJEFAExBu1na06vaz18eNMESWQDAVIwVV/H0KtRYIhRZAMCpO9TkqlHlUTlxZAktAOAUxF3SxNX986ZKXKWmV5v106LaswjjTxYKLQDgWFId0o6rGlJx1bio8ht+uFmFcH25DO+/vt5488dt1k+Lmr8LACCWGu6MsSTYFVdN71QNrPDjxps/JBVaAACHEJ9xNWZcxYOkrRdNBNUYoV1fvv5R7dACABhT6vDQQ8ZViAMrJCZNQ09tb4cWAMAh1fyUYN+4CqnAatQOLQCAqcqJq7ArsBrt0BJZAMC5yY2r0OccrPYP2PVxRACAuSltn17nYIksAIDv+hw9lXU2leVCAOBclCwNNrJOcndYKABwrnI6qPhROZYKAQDSsgPLFAsAODe5/VMUSx57AwCck9zAKloiNMUCAOj2HxPC7iXFJ2mLAAAAAElFTkSuQmCC"
+    ]
+}
