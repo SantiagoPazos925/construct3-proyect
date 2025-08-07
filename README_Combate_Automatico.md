@@ -138,6 +138,38 @@
 ✅ **Cooldown de ataques** - Evita spam de ataques
 ✅ **Detección de muerte** - Termina el combate cuando alguien muere
 ✅ **Posiciones fijas** - Los combatientes regresan a su posición inicial
+✅ **Sistema de esquiva** - El jugador puede esquivar ataques basándose en su agilidad y velocidad
+
+## 🛡️ Sistema de Esquiva
+
+### **Descripción:**
+El sistema de esquiva permite que el jugador evite recibir daño de los ataques del enemigo basándose en su atributo `DodgeChance`.
+
+### **Cálculo de Esquiva:**
+```
+DodgeChance = Agility * 1.5 + Speed * 0.8
+```
+
+### **Funcionamiento:**
+1. **Cuando el enemigo ataca:** Se genera un valor aleatorio entre 0 y 100
+2. **Comparación:** Si el valor aleatorio es menor o igual al `DodgeChance` del jugador, el ataque se esquiva
+3. **Resultado:** 
+   - **Esquiva exitosa:** Muestra "ESQUIVADO!" y no recibe daño
+   - **Esquiva fallida:** Recibe el daño normal del enemigo
+
+### **Variables Relacionadas:**
+- `DodgeChance` - Probabilidad de esquiva (calculada automáticamente)
+- `randomDodgeValue` - Valor aleatorio generado para el cálculo
+- `playerDodged` - Indica si el jugador esquivó exitosamente
+
+### **Personalización:**
+- **Ajustar fórmula:** Modifica la fórmula en la inicialización del sistema
+- **Ajustar atributos:** Cambia los valores de `Agility` y `Speed` del PlayerCombat
+- **Ajustar multiplicadores:** Modifica los multiplicadores (1.5 y 0.8) en la fórmula
+
+### **Ejemplo de Configuración:**
+- **Agility = 10, Speed = 5:** DodgeChance = 10 * 1.5 + 5 * 0.8 = 19%
+- **Agility = 20, Speed = 15:** DodgeChance = 20 * 1.5 + 15 * 0.8 = 42%
 
 ## 📝 Notas Importantes
 
