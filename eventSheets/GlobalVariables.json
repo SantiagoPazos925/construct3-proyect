@@ -13,7 +13,7 @@
         },
         {
             "eventType": "variable",
-            "name": "playerHP",
+            "name": "currentHP",
             "type": "number",
             "initialValue": "100",
             "comment": "Vida actual del jugador",
@@ -22,7 +22,7 @@
         },
         {
             "eventType": "variable",
-            "name": "enemyHP",
+            "name": "currentEnemyHP",
             "type": "number",
             "initialValue": "100",
             "comment": "Vida actual del enemigo",
@@ -206,6 +206,15 @@
             "type": "number",
             "initialValue": "1.0",
             "comment": "Multiplicador general de velocidad del combate (0.5=lento, 2.0=rápido)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerDodged",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Indica si el jugador esquiva exitosamente un ataque",
             "isStatic": false,
             "isConstant": false
         }
