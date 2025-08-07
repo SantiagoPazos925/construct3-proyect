@@ -217,6 +217,24 @@
             "comment": "Indica si el jugador esquiva exitosamente un ataque",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "enemyDodge",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Indica si el enemigo esquiva exitosamente un ataque",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "randomDodgeValue",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Valor aleatorio generado para el cálculo de esquiva",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }

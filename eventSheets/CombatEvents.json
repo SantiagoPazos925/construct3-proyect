@@ -87,6 +87,14 @@
                             }
                         },
                         {
+                            "id": "set-instvar-value",
+                            "objectClass": "EnemyCombat",
+                            "parameters": {
+                                "instance-variable": "DodgeChance",
+                                "value": "EnemyCombat.Agility* 1.5 + EnemyCombat.Speed* 0.8"
+                            }
+                        },
+                        {
                             "id": "set-eventvar-value",
                             "objectClass": "System",
                             "parameters": {
@@ -946,6 +954,14 @@
                     ],
                     "actions": [
                         {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "randomDodgeValue",
+                                "value": "random(0,100)"
+                            }
+                        },
+                        {
                             "id": "set-animation",
                             "objectClass": "PlayerCombat",
                             "parameters": {
@@ -962,157 +978,301 @@
                             }
                         },
                         {
-                            "id": "play",
-                            "objectClass": "Audio",
-                            "parameters": {
-                                "audio-file": "Player_Sword_1",
-                                "loop": "not-looping",
-                                "volume": "0",
-                                "stereo-pan": "0",
-                                "tag-optional": "\"PlayerAttack\""
-                            }
-                        },
-                        {
-                            "id": "set-animation",
-                            "objectClass": "EnemyCombat",
-                            "parameters": {
-                                "animation": "\"Injured\"",
-                                "from": "beginning"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "EnemyCombat",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"EnemyFlash\"",
-                                "start-value": "200",
-                                "end-value": "100",
-                                "time": "flashAnimationTime",
-                                "ease": "easeoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "subtract-from-eventvar",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "currentEnemyHP",
-                                "value": "PlayerCombat.PhysicalDamage"
-                            }
-                        },
-                        {
-                            "id": "set-eventvar-value",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "currentEnemyHP",
-                                "value": "max(0, currentEnemyHP)"
-                            }
-                        },
-                        {
-                            "id": "set-text",
-                            "objectClass": "EnemyHealth",
-                            "parameters": {
-                                "text": "\"HP: \" & max(0, currentEnemyHP)"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "EnemyHealthBar",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"EnemyHealthBarTween\"",
-                                "start-value": "EnemyHealthBar.width",
-                                "end-value": "EnemyHealthBar.Width* (max(0, currentEnemyHP) / max(1, EnemyCombat.MaxHealth))",
-                                "time": "0.5",
-                                "ease": "easeoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "set-eventvar-value",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "combatState",
-                                "value": "\"playerReturning\""
-                            }
-                        },
-                        {
-                            "id": "set-effect-parameter",
-                            "objectClass": "EnemyCombat",
-                            "parameters": {
-                                "effect": "\"AdjustHSL\"",
-                                "parameter-index": "2",
-                                "value": "Self.Tween.Value(\"EnemyFlash\")"
-                            }
-                        },
-                        {
-                            "id": "set-text",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "text": "\"-\" & PlayerCombat.PhysicalDamage"
-                            }
-                        },
-                        {
-                            "id": "set-position",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "x": "EnemyCombat.X",
-                                "y": "EnemyCombat.Y - 300"
-                            }
-                        },
-                        {
-                            "id": "set-visible",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "visibility": "visible"
-                            }
-                        },
-                        {
-                            "id": "tween-two-properties",
-                            "objectClass": "Damage",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"DamageFloat\"",
-                                "property": "position",
-                                "end-x": "Damage.X",
-                                "end-y": "Damage.Y - 300",
-                                "time": "1.5",
-                                "ease": "easeinsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "Damage",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"DamageFade\"",
-                                "start-value": "255",
-                                "end-value": "0",
-                                "time": "1.5",
-                                "ease": "easeinoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
                             "type": "script",
                             "language": "javascript",
                             "script": [
                                 "console.log('💥 JUGADOR ATACA - Daño:', runtime.globalVars.playerAttack, ', EnemyHP:', runtime.globalVars.enemyHP)"
                             ]
+                        }
+                    ],
+                    "children": [
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "compare-two-values",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "first-value": "randomDodgeValue",
+                                        "comparison": 5,
+                                        "second-value": "EnemyCombat.DodgeChance"
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('golpe certero')"
+                                    ]
+                                },
+                                {
+                                    "id": "set-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "enemyDodge",
+                                        "value": "false"
+                                    }
+                                },
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "animation": "\"Injured\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "EnemyCombat",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"EnemyFlash\"",
+                                        "start-value": "200",
+                                        "end-value": "100",
+                                        "time": "flashAnimationTime",
+                                        "ease": "easeoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "play",
+                                    "objectClass": "Audio",
+                                    "parameters": {
+                                        "audio-file": "Player_Sword_1",
+                                        "loop": "not-looping",
+                                        "volume": "0",
+                                        "stereo-pan": "0",
+                                        "tag-optional": "\"PlayerAttack\""
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "currentEnemyHP",
+                                        "value": "max(0, currentEnemyHP)"
+                                    }
+                                },
+                                {
+                                    "id": "subtract-from-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "currentEnemyHP",
+                                        "value": "PlayerCombat.PhysicalDamage"
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "EnemyHealth",
+                                    "parameters": {
+                                        "text": "\"HP: \" & max(0, currentEnemyHP)"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "EnemyHealthBar",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"EnemyHealthBarTween\"",
+                                        "start-value": "EnemyHealthBar.width",
+                                        "end-value": "EnemyHealthBar.Width* (max(0, currentEnemyHP) / max(1, EnemyCombat.MaxHealth))",
+                                        "time": "0.5",
+                                        "ease": "easeoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "combatState",
+                                        "value": "\"playerReturning\""
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "text": "\"-\" & PlayerCombat.PhysicalDamage"
+                                    }
+                                },
+                                {
+                                    "id": "set-position",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "x": "EnemyCombat.X",
+                                        "y": "EnemyCombat.Y - 300"
+                                    }
+                                },
+                                {
+                                    "id": "set-visible",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "visibility": "visible"
+                                    }
+                                },
+                                {
+                                    "id": "tween-two-properties",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFloat\"",
+                                        "property": "position",
+                                        "end-x": "Damage.X",
+                                        "end-y": "Damage.Y - 300",
+                                        "time": "1.5",
+                                        "ease": "easeinsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFade\"",
+                                        "start-value": "255",
+                                        "end-value": "0",
+                                        "time": "1.5",
+                                        "ease": "easeinoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('💥 ENEMIGO ATACA - Daño:', runtime.globalVars.enemyAttack, ', PlayerHP:', runtime.globalVars.playerHP)"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "else",
+                                    "objectClass": "System"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "enemyDodge",
+                                        "value": "true"
+                                    }
+                                },
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "animation": "\"Dodge\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "play",
+                                    "objectClass": "Audio",
+                                    "parameters": {
+                                        "audio-file": "Player_Dash",
+                                        "loop": "not-looping",
+                                        "volume": "0",
+                                        "stereo-pan": "0",
+                                        "tag-optional": "\"Dash\""
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "combatState",
+                                        "value": "\"playerReturning\""
+                                    }
+                                },
+                                {
+                                    "id": "set-position",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "x": "PlayerCombat.X",
+                                        "y": "PlayerCombat.Y - 300"
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "text": "\"Esquiva!\""
+                                    }
+                                },
+                                {
+                                    "id": "set-visible",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "visibility": "visible"
+                                    }
+                                },
+                                {
+                                    "id": "tween-two-properties",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFloat\"",
+                                        "property": "position",
+                                        "end-x": "Damage.X",
+                                        "end-y": "Damage.Y - 300",
+                                        "time": "1.5",
+                                        "ease": "easeinsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFade\"",
+                                        "start-value": "255",
+                                        "end-value": "0",
+                                        "time": "1.5",
+                                        "ease": "easeinoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('esquiva')"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "eventType": "block",
+                            "conditions": [],
+                            "actions": []
                         }
                     ]
                 },
@@ -1176,6 +1336,14 @@
                     ],
                     "actions": [
                         {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "randomDodgeValue",
+                                "value": "random(0,100)"
+                            }
+                        },
+                        {
                             "id": "set-animation",
                             "objectClass": "EnemyCombat",
                             "parameters": {
@@ -1190,149 +1358,290 @@
                                 "seconds": "0.5",
                                 "use-timescale": true
                             }
+                        }
+                    ],
+                    "children": [
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "compare-two-values",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "first-value": "randomDodgeValue",
+                                        "comparison": 5,
+                                        "second-value": "PlayerCombat.DodgeChance"
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('golpe certero')"
+                                    ]
+                                },
+                                {
+                                    "id": "set-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "playerDodged",
+                                        "value": "false"
+                                    }
+                                },
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "animation": "\"Injured\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "PlayerCombat",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"PlayerFlash\"",
+                                        "start-value": "200",
+                                        "end-value": "100",
+                                        "time": "flashAnimationTime",
+                                        "ease": "easeoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "subtract-from-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "currentHP",
+                                        "value": "EnemyCombat.PhysicalDamage"
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "currentHP",
+                                        "value": "max(0, currentHP)"
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "PlayerHealth",
+                                    "parameters": {
+                                        "text": "\"HP: \" & max(0, currentHP)"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "PlayerHealthBar",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"PlayerHealthBarTween\"",
+                                        "start-value": "PlayerHealthBar.width",
+                                        "end-value": "PlayerHealthBar.Width* (max(0, currentHP) / max(1, PlayerCombat.MaxHealth))",
+                                        "time": "0.5",
+                                        "ease": "easeoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "combatState",
+                                        "value": "\"enemyReturning\""
+                                    }
+                                },
+                                {
+                                    "id": "play",
+                                    "objectClass": "Audio",
+                                    "parameters": {
+                                        "audio-file": "Player_Hurt",
+                                        "loop": "not-looping",
+                                        "volume": "0",
+                                        "stereo-pan": "0",
+                                        "tag-optional": "\"EnemyAttack\""
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "text": "\"-\" & EnemyCombat.PhysicalDamage"
+                                    }
+                                },
+                                {
+                                    "id": "set-position",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "x": "PlayerCombat.X",
+                                        "y": "PlayerCombat.Y - 300"
+                                    }
+                                },
+                                {
+                                    "id": "set-visible",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "visibility": "visible"
+                                    }
+                                },
+                                {
+                                    "id": "tween-two-properties",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFloat\"",
+                                        "property": "position",
+                                        "end-x": "Damage.X",
+                                        "end-y": "Damage.Y - 300",
+                                        "time": "1.5",
+                                        "ease": "easeinsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFade\"",
+                                        "start-value": "255",
+                                        "end-value": "0",
+                                        "time": "1.5",
+                                        "ease": "easeinoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('💥 ENEMIGO ATACA - Daño:', runtime.globalVars.enemyAttack, ', PlayerHP:', runtime.globalVars.currentHP)"
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "id": "set-animation",
-                            "objectClass": "PlayerCombat",
-                            "parameters": {
-                                "animation": "\"Injured\"",
-                                "from": "beginning"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "PlayerCombat",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"PlayerFlash\"",
-                                "start-value": "200",
-                                "end-value": "100",
-                                "time": "flashAnimationTime",
-                                "ease": "easeoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "subtract-from-eventvar",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "currentHP",
-                                "value": "enemyAttack"
-                            }
-                        },
-                        {
-                            "id": "set-eventvar-value",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "currentHP",
-                                "value": "max(0, currentHP)"
-                            }
-                        },
-                        {
-                            "id": "set-text",
-                            "objectClass": "PlayerHealth",
-                            "parameters": {
-                                "text": "\"HP: \" & max(0, currentHP)"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "PlayerHealthBar",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"PlayerHealthBarTween\"",
-                                "start-value": "PlayerHealthBar.width",
-                                "end-value": "PlayerHealthBar.Width* (max(0, currentHP) / max(1, PlayerCombat.MaxHealth))",
-                                "time": "0.5",
-                                "ease": "easeoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "set-eventvar-value",
-                            "objectClass": "System",
-                            "parameters": {
-                                "variable": "combatState",
-                                "value": "\"enemyReturning\""
-                            }
-                        },
-                        {
-                            "id": "play",
-                            "objectClass": "Audio",
-                            "parameters": {
-                                "audio-file": "Player_Hurt",
-                                "loop": "not-looping",
-                                "volume": "0",
-                                "stereo-pan": "0",
-                                "tag-optional": "\"EnemyAttack\""
-                            }
-                        },
-                        {
-                            "id": "set-text",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "text": "\"-\" & enemyAttack"
-                            }
-                        },
-                        {
-                            "id": "set-position",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "x": "PlayerCombat.X",
-                                "y": "PlayerCombat.Y - 300"
-                            }
-                        },
-                        {
-                            "id": "set-visible",
-                            "objectClass": "Damage",
-                            "parameters": {
-                                "visibility": "visible"
-                            }
-                        },
-                        {
-                            "id": "tween-two-properties",
-                            "objectClass": "Damage",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"DamageFloat\"",
-                                "property": "position",
-                                "end-x": "Damage.X",
-                                "end-y": "Damage.Y - 300",
-                                "time": "1.5",
-                                "ease": "easeinsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "id": "tween-value",
-                            "objectClass": "Damage",
-                            "behaviorType": "Tween",
-                            "parameters": {
-                                "tags": "\"DamageFade\"",
-                                "start-value": "255",
-                                "end-value": "0",
-                                "time": "1.5",
-                                "ease": "easeinoutsine",
-                                "destroy-on-complete": "no",
-                                "loop": "no",
-                                "ping-pong": "no",
-                                "repeat-count": "1"
-                            }
-                        },
-                        {
-                            "type": "script",
-                            "language": "javascript",
-                            "script": [
-                                "console.log('💥 ENEMIGO ATACA - Daño:', runtime.globalVars.enemyAttack, ', PlayerHP:', runtime.globalVars.playerHP)"
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "else",
+                                    "objectClass": "System"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "playerDodged",
+                                        "value": "true"
+                                    }
+                                },
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "animation": "\"Dodge\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "play",
+                                    "objectClass": "Audio",
+                                    "parameters": {
+                                        "audio-file": "Player_Dash",
+                                        "loop": "not-looping",
+                                        "volume": "0",
+                                        "stereo-pan": "0",
+                                        "tag-optional": "\"Dash\""
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "combatState",
+                                        "value": "\"enemyReturning\""
+                                    }
+                                },
+                                {
+                                    "id": "set-position",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "x": "PlayerCombat.X",
+                                        "y": "PlayerCombat.Y - 300"
+                                    }
+                                },
+                                {
+                                    "id": "set-text",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "text": "\"Esquiva!\""
+                                    }
+                                },
+                                {
+                                    "id": "set-visible",
+                                    "objectClass": "Damage",
+                                    "parameters": {
+                                        "visibility": "visible"
+                                    }
+                                },
+                                {
+                                    "id": "tween-two-properties",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFloat\"",
+                                        "property": "position",
+                                        "end-x": "Damage.X",
+                                        "end-y": "Damage.Y - 300",
+                                        "time": "1.5",
+                                        "ease": "easeinsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "id": "tween-value",
+                                    "objectClass": "Damage",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"DamageFade\"",
+                                        "start-value": "255",
+                                        "end-value": "0",
+                                        "time": "1.5",
+                                        "ease": "easeinoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('esquiva')"
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -1502,7 +1811,7 @@
                             "type": "script",
                             "language": "javascript",
                             "script": [
-                                "console.log('🔄 CAMBIO DE TURNO - Pausa antes del turno del enemigo. PlayerHP:', runtime.globalVars.playerHP, ', EnemyHP:', runtime.globalVars.enemyHP)"
+                                "console.log('🔄 CAMBIO DE TURNO - Pausa antes del turno del enemigo. PlayerHP:', runtime.globalVars.currentHP, ', EnemyHP:', runtime.globalVars.currentEnemyHP)"
                             ]
                         }
                     ]
@@ -1562,7 +1871,7 @@
                             "type": "script",
                             "language": "javascript",
                             "script": [
-                                "console.log('🔄 CAMBIO DE TURNO - Pausa antes del turno del jugador. PlayerHP:', runtime.globalVars.playerHP, ', EnemyHP:', runtime.globalVars.enemyHP)"
+                                "console.log('🔄 CAMBIO DE TURNO - Pausa antes del turno del jugador. PlayerHP:', runtime.globalVars.currentHP, ', EnemyHP:', runtime.globalVars.currentEnemyHP)"
                             ]
                         }
                     ]
@@ -1938,7 +2247,7 @@
                             "type": "script",
                             "language": "javascript",
                             "script": [
-                                "console.log('🏆 VICTORIA DEL JUGADOR - ¡Enemigo derrotado! PlayerHP final:', runtime.globalVars.playerHP)"
+                                "console.log('🏆 VICTORIA DEL JUGADOR - ¡Enemigo derrotado!')"
                             ]
                         },
                         {
@@ -2049,7 +2358,7 @@
                             "type": "script",
                             "language": "javascript",
                             "script": [
-                                "console.log('💀 DERROTA - ¡Jugador derrotado! EnemyHP final:', runtime.globalVars.enemyHP)"
+                                "console.log('💀 DERROTA - ¡Jugador derrotado! EnemyHP final:')"
                             ]
                         }
                     ],
@@ -2083,11 +2392,8 @@
                     "eventType": "block",
                     "conditions": [
                         {
-                            "id": "every-x-seconds",
-                            "objectClass": "System",
-                            "parameters": {
-                                "interval-seconds": "5.0"
-                            }
+                            "id": "on-start-of-layout",
+                            "objectClass": "System"
                         }
                     ],
                     "actions": [
@@ -2117,31 +2423,6 @@
                                 "console.log('  - Probabilidad de Crítico:', runtime.objects.EnemyCombat.getFirstInstance().instVars.CriticalChance + '%')",
                                 "console.log('  - Daño Crítico:', runtime.objects.EnemyCombat.getFirstInstance().instVars.CriticalDamage + '%')",
                                 "console.log('  - Probabilidad de Esquivar:', runtime.objects.EnemyCombat.getFirstInstance().instVars.DodgeChance + '%')"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "eventType": "comment",
-                    "text": "=== DEBUG OPTIMIZADO (cada 3 segundos) ==="
-                },
-                {
-                    "eventType": "block",
-                    "conditions": [
-                        {
-                            "id": "every-x-seconds",
-                            "objectClass": "System",
-                            "parameters": {
-                                "interval-seconds": "1.0"
-                            }
-                        }
-                    ],
-                    "actions": [
-                        {
-                            "type": "script",
-                            "language": "javascript",
-                            "script": [
-                                "console.log('🔍 DEBUG - Estado:', runtime.globalVars.combatState, ', Cooldown:', runtime.globalVars.attackCooldown, ', isAttacking:', runtime.globalVars.isAttacking, ', PlayerHP:', runtime.globalVars.playerHP, ', EnemyHP:', runtime.globalVars.enemyHP)"
                             ]
                         }
                     ]
