@@ -1275,6 +1275,28 @@
                                     ]
                                 },
                                 {
+                                    "id": "set-position",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "x": "EnemyCombat.X + 50",
+                                        "y": "EnemyCombat.Y - 150"
+                                    }
+                                },
+                                {
+                                    "id": "start-animation",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "set-mirrored",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "state": "not-mirrored"
+                                    }
+                                },
+                                {
                                     "type": "script",
                                     "language": "javascript",
                                     "script": [
@@ -1456,6 +1478,28 @@
                                     "parameters": [
                                         "isEnemyCriticalHit ? \"CRÍTICO! -\" & round(max(1, (EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100)) - PlayerCombat.DamageReduction)) : \"-\" & round(max(1, EnemyCombat.PhysicalDamage - PlayerCombat.DamageReduction))"
                                     ]
+                                },
+                                {
+                                    "id": "set-position",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "x": "PlayerCombat.X + 50",
+                                        "y": "PlayerCombat.Y - 150"
+                                    }
+                                },
+                                {
+                                    "id": "start-animation",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "id": "set-mirrored",
+                                    "objectClass": "Cut",
+                                    "parameters": {
+                                        "state": "mirrored"
+                                    }
                                 },
                                 {
                                     "type": "script",
