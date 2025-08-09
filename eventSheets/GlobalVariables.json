@@ -235,6 +235,42 @@
             "comment": "Valor aleatorio generado para el cálculo de esquiva",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "randomCriticalValue",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Valor aleatorio generado para el cálculo de golpe crítico",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "isCriticalHit",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Indica si el ataque actual es un golpe crítico del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "randomEnemyCriticalValue",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Valor aleatorio generado para el cálculo de golpe crítico del enemigo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "isEnemyCriticalHit",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Indica si el ataque actual del enemigo es un golpe crítico",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }

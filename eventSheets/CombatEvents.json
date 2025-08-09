@@ -113,6 +113,14 @@
                                     }
                                 },
                                 {
+                                    "id": "set-instvar-value",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "instance-variable": "CriticalChance",
+                                        "value": "EnemyCombat.Agility* 1.2 + EnemyCombat.Speed* 0.4"
+                                    }
+                                },
+                                {
                                     "id": "set-eventvar-value",
                                     "objectClass": "System",
                                     "parameters": {
@@ -250,7 +258,7 @@
                                     "parameters": {
                                         "audio-file": "Dungeon",
                                         "loop": "looping",
-                                        "volume": "-10",
+                                        "volume": "-100",
                                         "stereo-pan": "0",
                                         "tag-optional": "\"Battle\""
                                     }
@@ -994,6 +1002,144 @@
                     "text": "=== SISTEMA DE ATAQUE CONSOLIDADO ==="
                 },
                 {
+                    "functionName": "setAnimationAttack",
+                    "functionDescription": "",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [],
+                    "children": [
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "compare-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "isCriticalHit"
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "animation": "\"CriticalAttack\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('golpe critico')"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "else",
+                                    "objectClass": "System"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "animation": "\"Attack\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('golpe normal')"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "functionName": "setAnimationAttackEnemy",
+                    "functionDescription": "",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [],
+                    "children": [
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "compare-boolean-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "isEnemyCriticalHit"
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "animation": "\"CriticalAttack\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('enemigo golpe critico')"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "else",
+                                    "objectClass": "System"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "id": "set-animation",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "animation": "\"Attack\"",
+                                        "from": "beginning"
+                                    }
+                                },
+                                {
+                                    "type": "script",
+                                    "language": "javascript",
+                                    "script": [
+                                        "console.log('enemigo golpe normal')"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "eventType": "comment",
                     "text": "PLAYER ATTACK"
                 },
@@ -1033,12 +1179,23 @@
                             }
                         },
                         {
-                            "id": "set-animation",
-                            "objectClass": "PlayerCombat",
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
                             "parameters": {
-                                "animation": "\"Attack\"",
-                                "from": "beginning"
+                                "variable": "randomCriticalValue",
+                                "value": "random(0,100)"
                             }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "isCriticalHit",
+                                "value": "randomCriticalValue <= PlayerCombat.CriticalChance"
+                            }
+                        },
+                        {
+                            "callFunction": "setAnimationAttack"
                         },
                         {
                             "id": "wait",
@@ -1080,7 +1237,7 @@
                                 {
                                     "callFunction": "damageText",
                                     "parameters": [
-                                        "\"-\" & PlayerCombat.PhysicalDamage"
+                                        "isCriticalHit ? \"CRÍTICO! -\" & round(PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100)) : \"-\" & PlayerCombat.PhysicalDamage"
                                     ]
                                 },
                                 {
@@ -1205,12 +1362,23 @@
                             }
                         },
                         {
-                            "id": "set-animation",
-                            "objectClass": "EnemyCombat",
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
                             "parameters": {
-                                "animation": "\"Attack\"",
-                                "from": "beginning"
+                                "variable": "randomEnemyCriticalValue",
+                                "value": "random(0,100)"
                             }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "isEnemyCriticalHit",
+                                "value": "randomEnemyCriticalValue <= EnemyCombat.CriticalChance"
+                            }
+                        },
+                        {
+                            "callFunction": "setAnimationAttackEnemy"
                         },
                         {
                             "id": "wait",
@@ -1252,7 +1420,7 @@
                                 {
                                     "callFunction": "damageText",
                                     "parameters": [
-                                        "\"-\" & EnemyCombat.PhysicalDamage"
+                                        "isEnemyCriticalHit ? \"CRÍTICO! -\" & round(EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100)) : \"-\" & EnemyCombat.PhysicalDamage"
                                     ]
                                 },
                                 {
@@ -2043,10 +2211,6 @@
                     ]
                 },
                 {
-                    "eventType": "comment",
-                    "text": "=== SISTEMA DE DEBUG DE ESTADÍSTICAS ==="
-                },
-                {
                     "functionName": "damageText",
                     "functionDescription": "",
                     "functionCategory": "",
@@ -2207,7 +2371,7 @@
                                     "objectClass": "System",
                                     "parameters": {
                                         "variable": "currentHP",
-                                        "value": "EnemyCombat.PhysicalDamage"
+                                        "value": "isEnemyCriticalHit ? EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100) : EnemyCombat.PhysicalDamage"
                                     }
                                 },
                                 {
@@ -2309,19 +2473,11 @@
                                     }
                                 },
                                 {
-                                    "id": "set-eventvar-value",
-                                    "objectClass": "System",
-                                    "parameters": {
-                                        "variable": "currentEnemyHP",
-                                        "value": "max(0, currentEnemyHP)"
-                                    }
-                                },
-                                {
                                     "id": "subtract-from-eventvar",
                                     "objectClass": "System",
                                     "parameters": {
                                         "variable": "currentEnemyHP",
-                                        "value": "PlayerCombat.PhysicalDamage"
+                                        "value": "isCriticalHit ? PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100) : PlayerCombat.PhysicalDamage"
                                     }
                                 },
                                 {
