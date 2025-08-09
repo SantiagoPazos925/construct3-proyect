@@ -90,6 +90,22 @@
                                 },
                                 {
                                     "id": "set-instvar-value",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "instance-variable": "DamageReduction",
+                                        "value": "PlayerCombat.Defense * 1.5 + PlayerCombat.Vitality * 0.8"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "instance-variable": "CriticalDamage",
+                                        "value": "EnemyCombat.Strength* 4 + EnemyCombat.Agility* 1.5"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
                                     "objectClass": "EnemyCombat",
                                     "parameters": {
                                         "instance-variable": "PhysicalDamage",
@@ -118,6 +134,22 @@
                                     "parameters": {
                                         "instance-variable": "CriticalChance",
                                         "value": "EnemyCombat.Agility* 1.2 + EnemyCombat.Speed* 0.4"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "instance-variable": "CriticalDamage",
+                                        "value": "EnemyCombat.Strength* 4 + EnemyCombat.Agility* 1.5"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "instance-variable": "DamageReduction",
+                                        "value": "EnemyCombat.Defense * 1.5 + EnemyCombat.Vitality * 0.8"
                                     }
                                 },
                                 {
@@ -323,6 +355,7 @@
                                         "console.log('  - Probabilidad de Crítico:', runtime.objects.PlayerCombat.getFirstInstance().instVars.CriticalChance + '%')",
                                         "console.log('  - Daño Crítico:', runtime.objects.PlayerCombat.getFirstInstance().instVars.CriticalDamage + '%')",
                                         "console.log('  - Probabilidad de Esquivar:', runtime.objects.PlayerCombat.getFirstInstance().instVars.DodgeChance + '%')",
+                                        "console.log('  - Reducción de Daño:', runtime.objects.PlayerCombat.getFirstInstance().instVars.DamageReduction)",
                                         "console.log('🎯 ESTADÍSTICAS DEL ENEMIGO:')",
                                         "console.log('  - Fuerza:', runtime.objects.EnemyCombat.getFirstInstance().instVars.Strength)",
                                         "console.log('  - Vitalidad:', runtime.objects.EnemyCombat.getFirstInstance().instVars.Vitality)",
@@ -333,7 +366,8 @@
                                         "console.log('  - Velocidad de Ataque:', runtime.objects.EnemyCombat.getFirstInstance().instVars.AttackSpeed)",
                                         "console.log('  - Probabilidad de Crítico:', runtime.objects.EnemyCombat.getFirstInstance().instVars.CriticalChance + '%')",
                                         "console.log('  - Daño Crítico:', runtime.objects.EnemyCombat.getFirstInstance().instVars.CriticalDamage + '%')",
-                                        "console.log('  - Probabilidad de Esquivar:', runtime.objects.EnemyCombat.getFirstInstance().instVars.DodgeChance + '%')"
+                                        "console.log('  - Probabilidad de Esquivar:', runtime.objects.EnemyCombat.getFirstInstance().instVars.DodgeChance + '%')",
+                                        "console.log('  - Reducción de Daño:', runtime.objects.EnemyCombat.getFirstInstance().instVars.DamageReduction)"
                                     ]
                                 }
                             ]
@@ -1237,7 +1271,7 @@
                                 {
                                     "callFunction": "damageText",
                                     "parameters": [
-                                        "isCriticalHit ? \"CRÍTICO! -\" & round(PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100)) : \"-\" & PlayerCombat.PhysicalDamage"
+                                        "isCriticalHit ? \"CRÍTICO! -\" & round(max(1, (PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100)) - EnemyCombat.DamageReduction)) : \"-\" & round(max(1, PlayerCombat.PhysicalDamage - EnemyCombat.DamageReduction))"
                                     ]
                                 },
                                 {
@@ -1420,7 +1454,7 @@
                                 {
                                     "callFunction": "damageText",
                                     "parameters": [
-                                        "isEnemyCriticalHit ? \"CRÍTICO! -\" & round(EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100)) : \"-\" & EnemyCombat.PhysicalDamage"
+                                        "isEnemyCriticalHit ? \"CRÍTICO! -\" & round(max(1, (EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100)) - PlayerCombat.DamageReduction)) : \"-\" & round(max(1, EnemyCombat.PhysicalDamage - PlayerCombat.DamageReduction))"
                                     ]
                                 },
                                 {
@@ -2371,7 +2405,7 @@
                                     "objectClass": "System",
                                     "parameters": {
                                         "variable": "currentHP",
-                                        "value": "isEnemyCriticalHit ? EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100) : EnemyCombat.PhysicalDamage"
+                                        "value": "max(1, (isEnemyCriticalHit ? EnemyCombat.PhysicalDamage * (1 + EnemyCombat.CriticalDamage / 100) : EnemyCombat.PhysicalDamage) - PlayerCombat.DamageReduction)"
                                     }
                                 },
                                 {
@@ -2386,7 +2420,7 @@
                                     "id": "set-text",
                                     "objectClass": "PlayerHealth",
                                     "parameters": {
-                                        "text": "\"HP: \" & max(0, currentHP)"
+                                        "text": "\"HP: \" & round(max(0, currentHP))"
                                     }
                                 },
                                 {
@@ -2477,14 +2511,14 @@
                                     "objectClass": "System",
                                     "parameters": {
                                         "variable": "currentEnemyHP",
-                                        "value": "isCriticalHit ? PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100) : PlayerCombat.PhysicalDamage"
+                                        "value": "max(1, (isCriticalHit ? PlayerCombat.PhysicalDamage * (1 + PlayerCombat.CriticalDamage / 100) : PlayerCombat.PhysicalDamage) - EnemyCombat.DamageReduction)"
                                     }
                                 },
                                 {
                                     "id": "set-text",
                                     "objectClass": "EnemyHealth",
                                     "parameters": {
-                                        "text": "\"HP: \" & max(0, currentEnemyHP)"
+                                        "text": "\"HP: \" & round(max(0, currentEnemyHP))"
                                     }
                                 },
                                 {
