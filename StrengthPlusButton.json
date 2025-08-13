@@ -1,0 +1,17 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "StrengthPlusButton",
+            "plugin-id": "Text",
+            "isGlobal": false,
+            "editorNewInstanceIsReplica": true,
+            "instanceVariables": [],
+            "behaviorTypes": [],
+            "effectTypes": []
+        }
+    ],
+    "folders": []
+}

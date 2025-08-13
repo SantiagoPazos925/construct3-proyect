@@ -33,6 +33,46 @@
                         {
                             "type": "comment",
                             "text": "SETEANDO VARIABLES Y TEXTOS GENERALES UI"
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "value": "tempStrength"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "value": "tempVitality"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "value": "tempAgility"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "value": "tempSpeed"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "value": "tempDefense"
+                            }
                         }
                     ],
                     "children": [

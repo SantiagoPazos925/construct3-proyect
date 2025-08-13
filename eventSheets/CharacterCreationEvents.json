@@ -1,0 +1,955 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "events",
+    "items": [
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-start-of-layout",
+                    "objectClass": "System"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "availablePoints",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-instvar-value",
+                    "objectClass": "PlayerCombat",
+                    "parameters": {
+                        "instance-variable": "Strength",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-instvar-value",
+                    "objectClass": "PlayerCombat",
+                    "parameters": {
+                        "instance-variable": "Vitality",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-instvar-value",
+                    "objectClass": "PlayerCombat",
+                    "parameters": {
+                        "instance-variable": "Agility",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-instvar-value",
+                    "objectClass": "PlayerCombat",
+                    "parameters": {
+                        "instance-variable": "Speed",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-instvar-value",
+                    "objectClass": "PlayerCombat",
+                    "parameters": {
+                        "instance-variable": "Defense",
+                        "value": "5"
+                    }
+                },
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "playerGender",
+                        "value": "\"Masculino\""
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "AgilityValueText",
+                    "parameters": {
+                        "text": "PlayerCombat.Agility"
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "DefenseValueText",
+                    "parameters": {
+                        "text": "PlayerCombat.Defense"
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "StrengthValueText",
+                    "parameters": {
+                        "text": "PlayerCombat.Strength"
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "VitalityValueText",
+                    "parameters": {
+                        "text": "PlayerCombat.Vitality"
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "SpeedValueText",
+                    "parameters": {
+                        "text": "PlayerCombat.Speed"
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "AvailablePointsText",
+                    "parameters": {
+                        "text": "\"Puntos disponibles:\" & availablePoints"
+                    }
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-text-changed",
+                    "objectClass": "PlayerNameInput"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "playerName",
+                        "value": "PlayerNameInput.Text"
+                    }
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-clicked",
+                    "objectClass": "GenderToggleButton"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "playerGender",
+                        "value": "playerGender =\"Masculino\" ? \"Femenino\": \"Masculino\""
+                    }
+                },
+                {
+                    "id": "set-text",
+                    "objectClass": "GenderDisplayText",
+                    "parameters": {
+                        "text": "playerGender"
+                    }
+                }
+            ]
+        },
+        {
+            "eventType": "group",
+            "disabled": false,
+            "title": "MouseEventStats",
+            "description": "",
+            "isActiveOnStart": true,
+            "children": [
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "AgilityPlusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 4,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "comparison": 2,
+                                "value": "maxAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "value": "min(PlayerCombat.Agility + 1, maxAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints - 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AgilityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Agility"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "AgilityMinusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "comparison": 4,
+                                "value": "minAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "value": "max(PlayerCombat.Agility - 1, minAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints + 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AgilityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Agility"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "StrengthPlusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 4,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "comparison": 2,
+                                "value": "maxAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "value": "min(PlayerCombat.Strength+ 1, maxAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints - 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "StrengthValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Strength"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "StrengthMinusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "comparison": 4,
+                                "value": "minAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "value": "max(PlayerCombat.Strength - 1, minAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints + 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "StrengthValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Strength"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "DefensePlusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 4,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "comparison": 2,
+                                "value": "maxAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "value": "min(PlayerCombat.Defense + 1, maxAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints - 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "DefenseValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Defense"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "DefenseMinusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "comparison": 4,
+                                "value": "minAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "value": "max(PlayerCombat.Defense- 1, minAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints + 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "DefenseValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Defense"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "SpeedPlusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 4,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "comparison": 2,
+                                "value": "maxAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "value": "min(PlayerCombat.Speed+ 1, maxAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints - 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "SpeedValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Speed"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "SpeedMinusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "comparison": 4,
+                                "value": "minAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "value": "max(PlayerCombat.Speed- 1, minAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints + 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "SpeedValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Speed"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "VitalityPlusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 4,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "comparison": 2,
+                                "value": "maxAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "value": "min(PlayerCombat.Vitality+ 1, maxAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints - 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "VitalityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Vitality"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "VitalityMinusButton"
+                            }
+                        },
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "comparison": 4,
+                                "value": "minAttributeValue"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "value": "max(PlayerCombat.Vitality- 1, minAttributeValue)"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "max(availablePoints + 1, 0)"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "VitalityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Vitality"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "UPDATE UI AFTER RESET"
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "ResetButton"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Agility",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Strength",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Speed",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Defense",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-instvar-value",
+                            "objectClass": "PlayerCombat",
+                            "parameters": {
+                                "instance-variable": "Vitality",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AgilityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Agility"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "StrengthValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Strength"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "DefenseValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Defense"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "VitalityValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Vitality"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "SpeedValueText",
+                            "parameters": {
+                                "text": "PlayerCombat.Speed"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "AvailablePointsText",
+                            "parameters": {
+                                "text": "\"Puntos disponibles:\" & availablePoints"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-object-clicked",
+                            "objectClass": "Mouse",
+                            "parameters": {
+                                "mouse-button": "left",
+                                "click-type": "clicked",
+                                "object-clicked": "ConfirmButton"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "playerName",
+                                "comparison": 1,
+                                "value": "\"\""
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 0,
+                                "value": "0"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "tempStrength",
+                                "value": "PlayerCombat.Strength"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "tempVitality",
+                                "value": "PlayerCombat.Vitality"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "tempAgility",
+                                "value": "PlayerCombat.Agility"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "tempSpeed",
+                                "value": "PlayerCombat.Speed"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "tempDefense",
+                                "value": "PlayerCombat.Defense"
+                            }
+                        },
+                        {
+                            "id": "go-to-layout",
+                            "objectClass": "System",
+                            "parameters": {
+                                "layout": "Combat"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

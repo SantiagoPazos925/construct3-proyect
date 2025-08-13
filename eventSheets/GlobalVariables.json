@@ -241,16 +241,7 @@
             "name": "randomCriticalValue",
             "type": "number",
             "initialValue": "0",
-            "comment": "Valor aleatorio generado para el cálculo de golpe crítico",
-            "isStatic": false,
-            "isConstant": false
-        },
-        {
-            "eventType": "variable",
-            "name": "isCriticalHit",
-            "type": "boolean",
-            "initialValue": "false",
-            "comment": "Indica si el ataque actual es un golpe crítico del jugador",
+            "comment": "",
             "isStatic": false,
             "isConstant": false
         },
@@ -259,7 +250,16 @@
             "name": "randomEnemyCriticalValue",
             "type": "number",
             "initialValue": "0",
-            "comment": "Valor aleatorio generado para el cálculo de golpe crítico del enemigo",
+            "comment": "",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "isCriticalHit",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "",
             "isStatic": false,
             "isConstant": false
         },
@@ -268,7 +268,97 @@
             "name": "isEnemyCriticalHit",
             "type": "boolean",
             "initialValue": "false",
-            "comment": "Indica si el ataque actual del enemigo es un golpe crítico",
+            "comment": "",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerName",
+            "type": "string",
+            "initialValue": "",
+            "comment": "Nombre del personaje del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerGender",
+            "type": "string",
+            "initialValue": "Masculino",
+            "comment": "Género del personaje (Masculino/Femenino)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "availablePoints",
+            "type": "number",
+            "initialValue": "20",
+            "comment": "Puntos disponibles para distribuir en atributos",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "minAttributeValue",
+            "type": "number",
+            "initialValue": "1",
+            "comment": "Valor mínimo para cualquier atributo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "maxAttributeValue",
+            "type": "number",
+            "initialValue": "10",
+            "comment": "Valor máximo para cualquier atributo",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "tempStrength",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Variable temporal para transferir Strength del layout CreateCharacter al layout Combat",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "tempVitality",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Variable temporal para transferir Vitality del layout CreateCharacter al layout Combat",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "tempAgility",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Variable temporal para transferir Agility del layout CreateCharacter al layout Combat",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "tempSpeed",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Variable temporal para transferir Speed del layout CreateCharacter al layout Combat",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "tempDefense",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Variable temporal para transferir Defense del layout CreateCharacter al layout Combat",
             "isStatic": false,
             "isConstant": false
         }
