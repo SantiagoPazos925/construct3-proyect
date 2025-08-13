@@ -423,6 +423,10 @@
                     ]
                 },
                 {
+                    "eventType": "comment",
+                    "text": "=== REDUCIR TIMER DE CUENTA REGRESIVA ==="
+                },
+                {
                     "eventType": "block",
                     "conditions": [
                         {
@@ -485,26 +489,45 @@
                     ],
                     "actions": [
                         {
+                            "type": "comment",
+                            "text": "SISTEMA DE INICIATIVA POR MOVEMENTSPEED (UNA SOLA VEZ AL INICIO)"
+                        },
+                        {
+                            "type": "comment",
+                            "text": "COMPARAR VELOCIDADES Y DECIDIR INICIATIVA"
+                        },
+                        {
                             "id": "set-eventvar-value",
                             "objectClass": "System",
                             "parameters": {
                                 "variable": "combatState",
-                                "value": "\"playerTurn\""
+                                "value": "PlayerCombat.MovementSpeed > EnemyCombat.MovementSpeed ? \"playerTurn\" : (PlayerCombat.MovementSpeed < EnemyCombat.MovementSpeed ? \"enemyTurn\" : (random(0,1) < 0.5 ? \"playerTurn\" : \"enemyTurn\"))"
                             }
                         },
                         {
                             "id": "set-text",
                             "objectClass": "CountdownText",
                             "parameters": {
-                                "text": "\"¡COMBATE INICIADO!\""
+                                "text": "combatState = \"playerTurn\" ? \"¡TÚ ATACAS PRIMERO!\" : \"¡EL ENEMIGO ATACA PRIMERO!\""
                             }
                         },
                         {
                             "id": "set-visible",
                             "objectClass": "CountdownText",
                             "parameters": {
-                                "visibility": "invisible"
+                                "visibility": "visible"
                             }
+                        },
+                        {
+                            "type": "script",
+                            "language": "javascript",
+                            "script": [
+                                "console.log('⚔️ INICIATIVA DECIDIDA (UNA SOLA VEZ):')",
+                                "console.log('  - Player MovementSpeed:', runtime.objects.PlayerCombat.getFirstInstance().instVars.MovementSpeed)",
+                                "console.log('  - Enemy MovementSpeed:', runtime.objects.EnemyCombat.getFirstInstance().instVars.MovementSpeed)",
+                                "console.log('  - Primer atacante:', runtime.globalVars.combatState)",
+                                "console.log('  - Esta decisión se mantendrá durante todo el combate')"
+                            ]
                         }
                     ]
                 },
@@ -727,6 +750,15 @@
                             "objectClass": "System",
                             "parameters": {
                                 "variable": "isAttacking"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 1,
+                                "value": "\"playerReturning\""
                             }
                         },
                         {
