@@ -22,6 +22,9 @@ Este sistema permite a los jugadores crear un personaje personalizado con:
 - `minAttributeValue` (number): Valor mínimo para cualquier atributo (1)
 - `maxAttributeValue` (number): Valor máximo para cualquier atributo (10)
 
+#### Sistema de Combate
+- `countdownTimer` (number): Cuenta regresiva antes de iniciar el combate (5 segundos)
+
 ### Variables Temporales para Transferencia
 - `tempStrength` (number): Valor temporal de fuerza para transferir al combate
 - `tempVitality` (number): Valor temporal de vitalidad para transferir al combate
@@ -138,6 +141,14 @@ Los atributos del personaje afectan directamente las estadísticas de combate:
 - **Velocidad**: Afecta la velocidad de movimiento
 - **Defensa**: Reduce el daño recibido
 
+### Cuenta Regresiva de Combate
+
+**NUEVO**: Al entrar al layout de combate, se muestra una cuenta regresiva de 5 segundos antes de iniciar el combate:
+- Muestra "¡COMBATE INICIANDO EN X!" donde X es el tiempo restante
+- El texto se actualiza en tiempo real
+- Al terminar la cuenta regresiva, el texto se oculta y comienza el combate
+- Esto da tiempo al jugador para prepararse y ver sus estadísticas
+
 ## Importación de Elementos UI
 
 ### Opción A: Elementos Individuales (Recomendado)
@@ -173,6 +184,7 @@ Cada elemento UI está disponible como un archivo JSON separado que puede import
    - `DefenseMinusButton.json` - Botón - de defensa
    - `ResetButton.json` - Botón de reiniciar
    - `ConfirmButton.json` - Botón de confirmar
+   - `CountdownText.json` - Texto de cuenta regresiva para el combate
 
 ### Opción B: Creación Manual
 

@@ -155,6 +155,8 @@ Para cada atributo (Fuerza, Vitalidad, Agilidad, Velocidad, Defensa), sigue este
 2. Haz clic en **Import** y selecciona `eventSheets/CombatEvents.json`
 3. Verifica que se hayan importado los eventos de combate
 
+**NUEVO**: El sistema ahora incluye una cuenta regresiva de 5 segundos antes de iniciar el combate, mostrando "¡COMBATE INICIANDO EN X!" donde X es el tiempo restante.
+
 ## Paso 4: Configurar la Navegación
 
 ### 4.1 Desde el Menú Principal

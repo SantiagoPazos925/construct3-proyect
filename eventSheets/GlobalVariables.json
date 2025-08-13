@@ -294,7 +294,7 @@
             "eventType": "variable",
             "name": "availablePoints",
             "type": "number",
-            "initialValue": "20",
+            "initialValue": "5",
             "comment": "Puntos disponibles para distribuir en atributos",
             "isStatic": false,
             "isConstant": false
@@ -303,7 +303,7 @@
             "eventType": "variable",
             "name": "minAttributeValue",
             "type": "number",
-            "initialValue": "1",
+            "initialValue": "5",
             "comment": "Valor mínimo para cualquier atributo",
             "isStatic": false,
             "isConstant": false
@@ -312,7 +312,7 @@
             "eventType": "variable",
             "name": "maxAttributeValue",
             "type": "number",
-            "initialValue": "10",
+            "initialValue": "100",
             "comment": "Valor máximo para cualquier atributo",
             "isStatic": false,
             "isConstant": false
@@ -359,6 +359,15 @@
             "type": "number",
             "initialValue": "5",
             "comment": "Variable temporal para transferir Defense del layout CreateCharacter al layout Combat",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "countdownTimer",
+            "type": "number",
+            "initialValue": "5",
+            "comment": "Cuenta regresiva antes de iniciar el combate (5 segundos)",
             "isStatic": false,
             "isConstant": false
         }

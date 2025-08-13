@@ -146,6 +146,14 @@
                                 },
                                 {
                                     "id": "set-instvar-value",
+                                    "objectClass": "PlayerCombat",
+                                    "parameters": {
+                                        "instance-variable": "MovementSpeed",
+                                        "value": "PlayerCombat.Speed* 0.4 + PlayerCombat.Agility* 0.2"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
                                     "objectClass": "EnemyCombat",
                                     "parameters": {
                                         "instance-variable": "PhysicalDamage",
@@ -190,6 +198,14 @@
                                     "parameters": {
                                         "instance-variable": "DamageReduction",
                                         "value": "EnemyCombat.Defense * 1.5 + EnemyCombat.Vitality * 0.8"
+                                    }
+                                },
+                                {
+                                    "id": "set-instvar-value",
+                                    "objectClass": "EnemyCombat",
+                                    "parameters": {
+                                        "instance-variable": "MovementSpeed",
+                                        "value": "EnemyCombat.Speed* 0.4 + EnemyCombat.Agility* 0.2"
                                     }
                                 },
                                 {
@@ -330,7 +346,7 @@
                                     "parameters": {
                                         "audio-file": "Dungeon",
                                         "loop": "looping",
-                                        "volume": "-100",
+                                        "volume": "-10",
                                         "stereo-pan": "0",
                                         "tag-optional": "\"Battle\""
                                     }
@@ -340,6 +356,22 @@
                                     "objectClass": "EnemyCombat",
                                     "parameters": {
                                         "state": "mirrored"
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "combatState",
+                                        "value": "\"countdown\""
+                                    }
+                                },
+                                {
+                                    "id": "set-eventvar-value",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "countdownTimer",
+                                        "value": "5"
                                     }
                                 },
                                 {
@@ -358,6 +390,121 @@
                                     ]
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== CUENTA REGRESIVA ANTES DEL COMBATE ==="
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "on-start-of-layout",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-text",
+                            "objectClass": "CountdownText",
+                            "parameters": {
+                                "text": "\"¡COMBATE INICIANDO EN \" & round(countdownTimer) & \"!\""
+                            }
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "CountdownText",
+                            "parameters": {
+                                "visibility": "visible"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"countdown\""
+                            }
+                        },
+                        {
+                            "id": "every-tick",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "subtract-from-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "countdownTimer",
+                                "value": "1/60"
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "CountdownText",
+                            "parameters": {
+                                "text": "\"¡COMBATE INICIANDO EN \" & round(countdownTimer) & \"!\""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "comparison": 0,
+                                "value": "\"countdown\""
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "countdownTimer",
+                                "comparison": 3,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "trigger-once-while-true",
+                            "objectClass": "System"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "combatState",
+                                "value": "\"playerTurn\""
+                            }
+                        },
+                        {
+                            "id": "set-text",
+                            "objectClass": "CountdownText",
+                            "parameters": {
+                                "text": "\"¡COMBATE INICIADO!\""
+                            }
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "CountdownText",
+                            "parameters": {
+                                "visibility": "invisible"
+                            }
                         }
                     ]
                 },
