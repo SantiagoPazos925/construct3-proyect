@@ -941,13 +941,150 @@
                             }
                         },
                         {
-                            "id": "go-to-layout",
+                            "id": "set-eventvar-value",
                             "objectClass": "System",
                             "parameters": {
-                                "layout": "Combat"
+                                "variable": "transitionState",
+                                "value": "\"fading\""
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "transitionTimer",
+                                "value": "0"
                             }
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "eventType": "comment",
+            "text": "=== SISTEMA DE TRANSICIÓN VISUAL GRADUAL ==="
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "compare-eventvar",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "transitionState",
+                        "comparison": 0,
+                        "value": "\"fading\""
+                    }
+                },
+                {
+                    "id": "trigger-once-while-true",
+                    "objectClass": "System"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "wait",
+                    "objectClass": "System",
+                    "parameters": {
+                        "seconds": "1.0",
+                        "use-timescale": true
+                    }
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "compare-eventvar",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "transitionState",
+                        "comparison": 0,
+                        "value": "\"fading\""
+                    }
+                },
+                {
+                    "id": "every-tick",
+                    "objectClass": "System"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "add-to-eventvar",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "transitionTimer",
+                        "value": "dt"
+                    }
+                },
+                {
+                    "id": "set-opacity",
+                    "objectClass": "TransitionOverlay",
+                    "parameters": {
+                        "opacity": "min(transitionTimer / 1.0, 1) * 100"
+                    }
+                }
+            ],
+            "children": [
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "transitionTimer",
+                                "comparison": 5,
+                                "value": "1"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "transitionState",
+                                "value": "\"complete\""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "compare-eventvar",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "transitionState",
+                        "comparison": 0,
+                        "value": "\"complete\""
+                    }
+                },
+                {
+                    "id": "trigger-once-while-true",
+                    "objectClass": "System"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "wait",
+                    "objectClass": "System",
+                    "parameters": {
+                        "seconds": "1.0",
+                        "use-timescale": true
+                    }
+                },
+                {
+                    "id": "go-to-layout",
+                    "objectClass": "System",
+                    "parameters": {
+                        "layout": "Combat"
+                    }
                 }
             ]
         }

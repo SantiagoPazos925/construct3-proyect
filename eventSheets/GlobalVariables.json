@@ -370,6 +370,24 @@
             "comment": "Cuenta regresiva antes de iniciar el combate (5 segundos)",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "transitionState",
+            "type": "string",
+            "initialValue": "idle",
+            "comment": "Controla el estado de la transición entre escenas (idle, fading, complete)",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "transitionTimer",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Temporizador para controlar la duración de la transición (en segundos)",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }
