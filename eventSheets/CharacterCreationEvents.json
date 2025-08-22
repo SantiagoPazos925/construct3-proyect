@@ -3,6 +3,10 @@
     "type": "events",
     "items": [
         {
+            "eventType": "include",
+            "includeSheet": "GlobalVariables"
+        },
+        {
             "eventType": "block",
             "conditions": [
                 {
@@ -16,7 +20,39 @@
                     "objectClass": "System",
                     "parameters": {
                         "variable": "availablePoints",
-                        "value": "5"
+                        "value": "25"
+                    }
+                },
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "playerLevel",
+                        "value": "1"
+                    }
+                },
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "playerExperience",
+                        "value": "0"
+                    }
+                },
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "experienceToNextLevel",
+                        "value": "100"
+                    }
+                },
+                {
+                    "id": "set-eventvar-value",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "enemyExperienceReward",
+                        "value": "100"
                     }
                 },
                 {
@@ -110,6 +146,16 @@
                     }
                 }
             ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-start-of-layout",
+                    "objectClass": "System"
+                }
+            ],
+            "actions": []
         },
         {
             "eventType": "block",

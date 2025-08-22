@@ -1,0 +1,251 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "events",
+    "items": [
+        {
+            "eventType": "include",
+            "includeSheet": "GlobalVariables"
+        },
+        {
+            "eventType": "group",
+            "disabled": false,
+            "title": "Sistema de Niveles",
+            "description": "Sistema de experiencia y niveles del jugador",
+            "isActiveOnStart": true,
+            "children": [
+                {
+                    "eventType": "comment",
+                    "text": "=== FUNCIÓN: ENEMIGO DERROTADO ==="
+                },
+                {
+                    "functionName": "enemyDefeated",
+                    "functionDescription": "Se ejecuta cuando un enemigo es derrotado",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [
+                        {
+                            "type": "comment",
+                            "text": "Console.log: Enemigo derrotado - otorgando experiencia"
+                        },
+                        {
+                            "type": "comment",
+                            "text": "Otorgar experiencia al jugador"
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "playerExperience",
+                                "value": "playerExperience + enemyExperienceReward"
+                            }
+                        },
+                        {
+                            "type": "script",
+                            "language": "javascript",
+                            "script": [
+                                "console.log('📊 [SISTEMA NIVELES] Experiencia después:', runtime.globalVars.playerExperience);",
+                                "console.log('📊 [SISTEMA NIVELES] Nivel actual:', runtime.globalVars.playerLevel);",
+                                "console.log('📊 [SISTEMA NIVELES] Experiencia para siguiente nivel:', runtime.globalVars.experienceToNextLevel);"
+                            ]
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "BackgroundUIExperience",
+                            "parameters": {
+                                "visibility": "visible"
+                            }
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "PlayerExperienceBarBorder",
+                            "parameters": {
+                                "visibility": "visible"
+                            }
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "PlayerExperienceBar",
+                            "parameters": {
+                                "visibility": "visible"
+                            }
+                        },
+                        {
+                            "id": "set-visible",
+                            "objectClass": "ButtonContinue",
+                            "parameters": {
+                                "visibility": "visible"
+                            }
+                        },
+                        {
+                            "id": "wait",
+                            "objectClass": "System",
+                            "parameters": {
+                                "seconds": "2.0",
+                                "use-timescale": true
+                            }
+                        },
+                        {
+                            "id": "tween-value",
+                            "objectClass": "PlayerExperienceBar",
+                            "behaviorType": "Tween",
+                            "parameters": {
+                                "tags": "\"PlayerExperienceBarTween\"",
+                                "start-value": "PlayerExperienceBar.width",
+                                "end-value": "min(570, 570 * (max(0, playerExperience) / max(1, experienceToNextLevel)))",
+                                "time": "0.5",
+                                "ease": "easeoutsine",
+                                "destroy-on-complete": "no",
+                                "loop": "no",
+                                "ping-pong": "no",
+                                "repeat-count": "1"
+                            }
+                        },
+                        {
+                            "callFunction": "checkLevelUp"
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== FUNCIÓN: VERIFICAR SUBIDA DE NIVEL ==="
+                },
+                {
+                    "functionName": "checkLevelUp",
+                    "functionDescription": "Verifica si el jugador puede subir de nivel",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [
+                        {
+                            "type": "comment",
+                            "text": "Verificar si hay suficiente experiencia para subir de nivel"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "eventType": "block",
+                            "conditions": [
+                                {
+                                    "id": "compare-eventvar",
+                                    "objectClass": "System",
+                                    "parameters": {
+                                        "variable": "playerExperience",
+                                        "comparison": 5,
+                                        "value": "experienceToNextLevel"
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "comment",
+                                    "text": "Console.log: Condición de subida de nivel cumplida"
+                                },
+                                {
+                                    "callFunction": "levelUp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== FUNCIÓN: SUBIR DE NIVEL ==="
+                },
+                {
+                    "functionName": "levelUp",
+                    "functionDescription": "Hace que el jugador suba de nivel",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [
+                        {
+                            "type": "comment",
+                            "text": "Console.log: Iniciando subida de nivel"
+                        },
+                        {
+                            "type": "comment",
+                            "text": "Subir nivel del jugador"
+                        },
+                        {
+                            "id": "add-to-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "playerLevel",
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "id": "subtract-from-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "playerExperience",
+                                "value": "experienceToNextLevel"
+                            }
+                        },
+                        {
+                            "id": "add-to-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "id": "set-boolean-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "attributesLocked",
+                                "value": "false"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "experienceToNextLevel",
+                                "value": "experienceToNextLevel * 1.5"
+                            }
+                        },
+                        {
+                            "callFunction": "showLevelUpMessage"
+                        }
+                    ]
+                },
+                {
+                    "functionName": "showLevelUpMessage",
+                    "functionDescription": "Muestra un mensaje cuando el jugador sube de nivel",
+                    "functionCategory": "",
+                    "functionReturnType": "none",
+                    "functionCopyPicked": false,
+                    "functionIsAsync": false,
+                    "functionParameters": [],
+                    "eventType": "function-block",
+                    "conditions": [],
+                    "actions": [
+                        {
+                            "type": "comment",
+                            "text": "Mostrar mensaje de subida de nivel (esto se puede implementar con UI)"
+                        }
+                    ]
+                },
+                {
+                    "eventType": "comment",
+                    "text": "=== FUNCIÓN: MOSTRAR MENSAJE DE SUBIDA DE NIVEL ==="
+                }
+            ]
+        }
+    ]
+}

@@ -357,6 +357,22 @@
                                     }
                                 },
                                 {
+                                    "id": "tween-value",
+                                    "objectClass": "PlayerExperienceBar",
+                                    "behaviorType": "Tween",
+                                    "parameters": {
+                                        "tags": "\"PlayerExperienceBarTween\"",
+                                        "start-value": "PlayerExperienceBar.width",
+                                        "end-value": "570 * (max(0, playerExperience) / max(1, experienceToNextLevel))",
+                                        "time": "0.5",
+                                        "ease": "easeoutsine",
+                                        "destroy-on-complete": "no",
+                                        "loop": "no",
+                                        "ping-pong": "no",
+                                        "repeat-count": "1"
+                                    }
+                                },
+                                {
                                     "id": "play",
                                     "objectClass": "Audio",
                                     "parameters": {
@@ -518,17 +534,6 @@
                             "parameters": {
                                 "visibility": "visible"
                             }
-                        },
-                        {
-                            "type": "script",
-                            "language": "javascript",
-                            "script": [
-                                "console.log('⚔️ INICIATIVA DECIDIDA (UNA SOLA VEZ):')",
-                                "console.log('  - Player MovementSpeed:', runtime.objects.PlayerCombat.getFirstInstance().instVars.MovementSpeed)",
-                                "console.log('  - Enemy MovementSpeed:', runtime.objects.EnemyCombat.getFirstInstance().instVars.MovementSpeed)",
-                                "console.log('  - Primer atacante:', runtime.globalVars.combatState)",
-                                "console.log('  - Esta decisión se mantendrá durante todo el combate')"
-                            ]
                         }
                     ]
                 },
@@ -545,8 +550,7 @@
                             "type": "comment",
                             "text": "DEBUGGER"
                         }
-                    ],
-                    "children": []
+                    ]
                 },
                 {
                     "eventType": "comment",
@@ -1302,13 +1306,6 @@
                                         "animation": "\"Attack\"",
                                         "from": "beginning"
                                     }
-                                },
-                                {
-                                    "type": "script",
-                                    "language": "javascript",
-                                    "script": [
-                                        "console.log('enemigo golpe normal')"
-                                    ]
                                 }
                             ]
                         }
@@ -1581,13 +1578,6 @@
                             ],
                             "actions": [
                                 {
-                                    "type": "script",
-                                    "language": "javascript",
-                                    "script": [
-                                        "console.log('golpe certero')"
-                                    ]
-                                },
-                                {
                                     "callFunction": "playerHit",
                                     "parameters": [
                                         "\"Player\""
@@ -1686,7 +1676,7 @@
                 },
                 {
                     "eventType": "comment",
-                    "text": "=== SISTEMA DE BARRAS DE VIDA DINÁMICAS ==="
+                    "text": "=== SISTEMA DE BARRAS DINÁMICAS ==="
                 },
                 {
                     "eventType": "block",
@@ -1728,6 +1718,28 @@
                             "objectClass": "EnemyHealthBar",
                             "parameters": {
                                 "width": "Self.Tween.Value(\"EnemyHealthBarTween\")"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "is-playing",
+                            "objectClass": "PlayerExperienceBar",
+                            "behaviorType": "Tween",
+                            "parameters": {
+                                "tags": "\"PlayerExperienceBarTween\""
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-width",
+                            "objectClass": "PlayerExperienceBar",
+                            "parameters": {
+                                "width": "Self.Tween.Value(\"PlayerExperienceBarTween\")"
                             }
                         }
                     ]
@@ -2253,6 +2265,9 @@
                                 {
                                     "id": "destroy",
                                     "objectClass": "EnemyCombat"
+                                },
+                                {
+                                    "callFunction": "enemyDefeated"
                                 }
                             ]
                         }
@@ -2768,6 +2783,38 @@
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-object-clicked",
+                    "objectClass": "Mouse",
+                    "parameters": {
+                        "mouse-button": "left",
+                        "click-type": "clicked",
+                        "object-clicked": "ButtonContinue"
+                    }
+                },
+                {
+                    "id": "compare-eventvar",
+                    "objectClass": "System",
+                    "parameters": {
+                        "variable": "combatState",
+                        "comparison": 0,
+                        "value": "\"victory\""
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "id": "go-to-layout",
+                    "objectClass": "System",
+                    "parameters": {
+                        "layout": "Town"
+                    }
                 }
             ]
         }

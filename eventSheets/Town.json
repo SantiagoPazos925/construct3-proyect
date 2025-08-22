@@ -16,7 +16,7 @@
             "actions": [
                 {
                     "id": "set-animation",
-                    "objectClass": "Sprite2",
+                    "objectClass": "TownBackground",
                     "parameters": {
                         "animation": "\"selectColiseo\"",
                         "from": "beginning"
@@ -39,7 +39,7 @@
             "actions": [
                 {
                     "id": "set-animation",
-                    "objectClass": "Sprite2",
+                    "objectClass": "TownBackground",
                     "parameters": {
                         "animation": "\"default\"",
                         "from": "beginning"
@@ -443,7 +443,7 @@
                             "parameters": {
                                 "instance-variable": "Agility",
                                 "comparison": 4,
-                                "value": "minAttributeValue"
+                                "value": "tempAgility"
                             }
                         },
                         {
@@ -580,7 +580,7 @@
                             "parameters": {
                                 "instance-variable": "Strength",
                                 "comparison": 4,
-                                "value": "minAttributeValue"
+                                "value": "tempStrength"
                             }
                         },
                         {
@@ -717,7 +717,7 @@
                             "parameters": {
                                 "instance-variable": "Defense",
                                 "comparison": 4,
-                                "value": "minAttributeValue"
+                                "value": "tempDefense"
                             }
                         },
                         {
@@ -854,7 +854,7 @@
                             "parameters": {
                                 "instance-variable": "Speed",
                                 "comparison": 4,
-                                "value": "minAttributeValue"
+                                "value": "tempSpeed"
                             }
                         },
                         {
@@ -991,7 +991,7 @@
                             "parameters": {
                                 "instance-variable": "Vitality",
                                 "comparison": 4,
-                                "value": "minAttributeValue"
+                                "value": "tempVitality"
                             }
                         },
                         {

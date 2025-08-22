@@ -415,6 +415,51 @@
             "comment": "Nivel máximo donde se pueden editar atributos",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerExperience",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Nivel máximo donde se pueden editar atributos",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "experienceToNextLevel",
+            "type": "number",
+            "initialValue": "100",
+            "comment": "Experiencia necesaria para el siguiente nivel",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "enemyExperienceReward",
+            "type": "number",
+            "initialValue": "50",
+            "comment": "Experiencia que otorga cada enemigo derrotado",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "showLevelUpNotification",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Controla si mostrar la notificación de subida de nivel",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "levelUpNotificationTimer",
+            "type": "number",
+            "initialValue": "0",
+            "comment": "Timer para la notificación de subida de nivel",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }
