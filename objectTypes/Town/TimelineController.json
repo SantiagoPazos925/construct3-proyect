@@ -1,0 +1,17 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "object-types",
+    "families": [],
+    "items": [
+        {
+            "name": "TimelineController",
+            "plugin-id": "Timeline",
+            "singleglobal-inst": {
+                "type": "TimelineController",
+                "properties": {},
+                "tags": ""
+            }
+        }
+    ],
+    "folders": []
+}

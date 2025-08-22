@@ -388,6 +388,33 @@
             "comment": "Temporizador para controlar la duración de la transición (en segundos)",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "playerLevel",
+            "type": "number",
+            "initialValue": "1",
+            "comment": " Nivel actual del jugador",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "maxUnlockedLevel",
+            "type": "number",
+            "initialValue": "1",
+            "comment": "Nivel máximo donde se pueden editar atributos",
+            "isStatic": false,
+            "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "attributesLocked",
+            "type": "boolean",
+            "initialValue": "false",
+            "comment": "Nivel máximo donde se pueden editar atributos",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }
