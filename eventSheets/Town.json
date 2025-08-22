@@ -16,7 +16,7 @@
             "actions": [
                 {
                     "id": "set-animation",
-                    "objectClass": "Sprite5",
+                    "objectClass": "Sprite2",
                     "parameters": {
                         "animation": "\"selectColiseo\"",
                         "from": "beginning"
@@ -39,7 +39,7 @@
             "actions": [
                 {
                     "id": "set-animation",
-                    "objectClass": "Sprite5",
+                    "objectClass": "Sprite2",
                     "parameters": {
                         "animation": "\"default\"",
                         "from": "beginning"
@@ -258,7 +258,7 @@
                     "objectClass": "System",
                     "parameters": {
                         "variable": "attributesLocked",
-                        "value": "0"
+                        "value": "attributesLocked = 0 ? 0 : attributesLocked"
                     }
                 },
                 {

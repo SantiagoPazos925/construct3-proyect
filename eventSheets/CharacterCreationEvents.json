@@ -944,6 +944,14 @@
                             "id": "set-eventvar-value",
                             "objectClass": "System",
                             "parameters": {
+                                "variable": "attributesLocked",
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
                                 "variable": "transitionState",
                                 "value": "\"fading\""
                             }
@@ -953,6 +961,44 @@
                             "objectClass": "System",
                             "parameters": {
                                 "variable": "transitionTimer",
+                                "value": "0"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "every-tick",
+                            "objectClass": "System"
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "availablePoints",
+                                "comparison": 0,
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "id": "compare-eventvar",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "playerName",
+                                "comparison": 1,
+                                "value": "\"\""
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-effect-parameter",
+                            "objectClass": "ConfirmButtonSprite",
+                            "parameters": {
+                                "effect": "\"Grayscale\"",
+                                "parameter-index": "0",
                                 "value": "0"
                             }
                         }
