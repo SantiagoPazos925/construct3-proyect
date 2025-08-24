@@ -1,0 +1,139 @@
+{
+    "is-c3-clipboard-data": true,
+    "type": "events",
+    "items": [
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-object-clicked",
+                    "objectClass": "Mouse",
+                    "parameters": {
+                        "mouse-button": "left",
+                        "click-type": "clicked",
+                        "object-clicked": "goBackButton"
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "id": "go-to-layout",
+                    "objectClass": "System",
+                    "parameters": {
+                        "layout": "Town"
+                    }
+                }
+            ]
+        },
+        {
+            "eventType": "block",
+            "conditions": [
+                {
+                    "id": "on-object-clicked",
+                    "objectClass": "Mouse",
+                    "parameters": {
+                        "mouse-button": "left",
+                        "click-type": "clicked",
+                        "object-clicked": "CombatEnemyButton"
+                    }
+                }
+            ],
+            "actions": [],
+            "children": [
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "CombatEnemyButton",
+                            "parameters": {
+                                "instance-variable": "CombatEnemyID",
+                                "comparison": 0,
+                                "value": "\"1\""
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "enemyType",
+                                "value": "\"EnemyEasy\""
+                            }
+                        },
+                        {
+                            "id": "go-to-layout",
+                            "objectClass": "System",
+                            "parameters": {
+                                "layout": "Combat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "CombatEnemyButton",
+                            "parameters": {
+                                "instance-variable": "CombatEnemyID",
+                                "comparison": 0,
+                                "value": "\"2\""
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "enemyType",
+                                "value": "\"EnemyNormal\""
+                            }
+                        },
+                        {
+                            "id": "go-to-layout",
+                            "objectClass": "System",
+                            "parameters": {
+                                "layout": "Combat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "eventType": "block",
+                    "conditions": [
+                        {
+                            "id": "compare-instance-variable",
+                            "objectClass": "CombatEnemyButton",
+                            "parameters": {
+                                "instance-variable": "CombatEnemyID",
+                                "comparison": 0,
+                                "value": "\"3\""
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "set-eventvar-value",
+                            "objectClass": "System",
+                            "parameters": {
+                                "variable": "enemyType",
+                                "value": "\"EnemyHard\""
+                            }
+                        },
+                        {
+                            "id": "go-to-layout",
+                            "objectClass": "System",
+                            "parameters": {
+                                "layout": "Combat"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

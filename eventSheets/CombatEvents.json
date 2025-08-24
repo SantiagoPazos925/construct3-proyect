@@ -73,6 +73,25 @@
                                 "instance-variable": "Defense",
                                 "value": "tempDefense"
                             }
+                        },
+                        {
+                            "type": "script",
+                            "language": "javascript",
+                            "script": [
+                                "console.log('📊 [SISTEMA NIVELES] Experiencia para siguiente nivel:', runtime.globalVars.enemyType);"
+                            ]
+                        },
+                        {
+                            "id": "create-object",
+                            "objectClass": "System",
+                            "parameters": {
+                                "object-to-create": "EnemyCombat",
+                                "layer": "0",
+                                "x": "1400",
+                                "y": "960",
+                                "create-hierarchy": false,
+                                "template-name": "enemyType"
+                            }
                         }
                     ],
                     "children": [
@@ -2813,7 +2832,7 @@
                     "id": "go-to-layout",
                     "objectClass": "System",
                     "parameters": {
-                        "layout": "Town"
+                        "layout": "PostCombat"
                     }
                 }
             ]

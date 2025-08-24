@@ -85,7 +85,7 @@
                             "id": "wait",
                             "objectClass": "System",
                             "parameters": {
-                                "seconds": "2.0",
+                                "seconds": "0.5",
                                 "use-timescale": true
                             }
                         },

@@ -460,6 +460,15 @@
             "comment": "Timer para la notificación de subida de nivel",
             "isStatic": false,
             "isConstant": false
+        },
+        {
+            "eventType": "variable",
+            "name": "enemyType",
+            "type": "string",
+            "initialValue": "",
+            "comment": "Type of the enemies",
+            "isStatic": false,
+            "isConstant": false
         }
     ]
 }

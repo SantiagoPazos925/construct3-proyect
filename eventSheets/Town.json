@@ -65,7 +65,7 @@
                     "id": "go-to-layout",
                     "objectClass": "System",
                     "parameters": {
-                        "layout": "Combat"
+                        "layout": "PreCombat"
                     }
                 }
             ]
